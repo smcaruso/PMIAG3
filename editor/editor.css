@@ -1,0 +1,67 @@
+html {
+    --sidebar-width: 25dvw;
+}
+
+body {
+    background-color: #292828;
+    color: #fefefe;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: 100dvw;
+    height: 100dvh;
+    margin: 0;
+}
+
+.save-button {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 10dvh;
+    width: 10dvh;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(0.25em);
+    -webkit-backdrop-filter: blur(0.25em);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header.editor-head {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    height: 10dvh;
+    width: 100dvw;
+    backdrop-filter: blur(0.25em);
+    -webkit-backdrop-filter: blur(0.25em);
+}
+
+.editor-head .editor-head-side {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    width: var(--sidebar-width);
+    padding-left: 10dvh;
+}
+
+.editor-head .editor-head-main {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.editor-page-container {
+    display: flex;
+    flex-direction: row;
+    height: 100dvh;
+}
+
+.editor-page-sidebar {
+    width: var(--sidebar-width);
+    padding-left: 10dvh;
+}
+
+.editor-page-content {
+    flex-grow: 1;
+}
