@@ -9,12 +9,55 @@
 </head>
 <body>
     <header class="editor-head">
-        <div class="editor-head-side">I am the left part of the header.</div>
-        <div class="editor-head-main">I am the main part of the header.</div>
+        <div class="editor-head-side">
+            <input type="text" class="editable-text-field" name="headerCategory" placeholder="Award Category">
+        </div>
+        <div class="editor-head-main">
+            <input type="text" class="editable-text-field" name="headerTitle" placeholder="Award Title">
+        </div>
     </header>
     <div class="editor-page-container">
-        <div class="editor-page-sidebar">I am the sidebar.</div>
-        <div class="editor-page-content">I am the main page content.</div>
+        <div class="editor-page-sidebar">
+            <input type="text" class="editable-text-field" name="sidebarStatus" placeholder="Award Status (Winner / Finalist / Recipient)">
+            <input type="text" class="editable-text-field" name="sidebarTitle" placeholder="Award Title">
+            <input type="text" class="editable-text-field" name="sidebarCategory" placeholder="Award Category">
+            <input type="text" class="editable-text-field" name="aboutText" placeholder="About This Award">
+            <div class="sidebar-links-block group-block">
+                <span class="block-label">Links</span>
+                <input type="button" class="block-add-button" name="addLink" value="+">
+                <div class="sidebar-link">
+                    <input type="text" class="editable-text-field" name="linkUrl" placeholder="URL">
+                    <input type="text" class="editable-text-field" name="linkLabel" placeholder="Label">
+                </div>
+            </div>
+            <div class="sidebar-team-block group-block">
+                <span class="block-label">Team</span>
+                <input type="button" class="block-add-button" name="addLink" value="+">
+                <div class="team-member">
+                    <input type="text" class="editable-text-field" name="teamMember" placeholder="Team Member">
+                </div>
+            </div>
+            <label for="audioGuide">Audio Guide?</label>
+            <input type="checkbox" class="input-checkbox" name="audioGuide">
+            <input type="text" class="editable-text-field" name="nextPage" placeholder="Next Page ID">
+        </div>
+        <div class="editor-page-content">
+            <label for="mainPageStatus">Show Status?</label>
+            <input type="checkbox" class="input-checkbox" name="mainPageStatus">
+            <input type="text" class="editable-text-field" name="pageTitle" placeholder="Page Title">
+            <input type="text" class="editable-text-field" name="pageSubtitle" placeholder="Subtitle">
+            <input type="text" class="editable-text-field" name="leadVideo" placeholder="Lead Video Filename">
+            <input type="text" class="editable-text-field" name="leadImage" placeholder="Lead Image Filename">
+            <textarea name="editable-text-area" id="descriptionText" cols="80" rows="10"></textarea>
+            <div class="image-gallery-block group-block">
+                <span class="block-label">Image Gallery</span>
+                <input type="button" class="block-add-button" name="addLink" value="+">
+                <div class="image">
+                    <input type="text" class="editable-text-field" name="imageUrl" placeholder="Image Filename">
+                    <textarea name="editable-text-area" id="imageCaption" cols="80" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="save-button">Save</div>
     <script src="./editorMain.js"></script>
