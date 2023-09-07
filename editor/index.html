@@ -10,29 +10,35 @@
 <body>
     <header class="editor-head">
         <div class="editor-head-side">
-            <input type="text" class="editable-text-field" name="headerCategory" placeholder="Award Category">
+            <input type="text" class="editable-text-field header" name="headerCategory" placeholder="Award Category">
         </div>
         <div class="editor-head-main">
-            <input type="text" class="editable-text-field" name="headerTitle" placeholder="Award Title">
+            <input type="text" class="editable-text-field header" name="headerTitle" placeholder="Award Title">
         </div>
     </header>
+
     <div class="editor-page-container">
+
         <div class="editor-page-sidebar">
             <input type="text" class="editable-text-field" name="sidebarStatus" placeholder="Award Status (Winner / Finalist / Recipient)">
             <input type="text" class="editable-text-field" name="sidebarTitle" placeholder="Award Title">
             <input type="text" class="editable-text-field" name="sidebarCategory" placeholder="Award Category">
             <input type="text" class="editable-text-field" name="aboutText" placeholder="About This Award">
             <div class="sidebar-links-block group-block">
-                <span class="block-label">Links</span>
-                <input type="button" class="block-add-button" name="addLink" value="+">
+                <div class="block-header">
+                    <span class="block-label">Links</span>
+                    <input type="button" class="block-add-button" name="addLink" value="+">
+                </div>
                 <div class="sidebar-link">
                     <input type="text" class="editable-text-field" name="linkUrl" placeholder="URL">
                     <input type="text" class="editable-text-field" name="linkLabel" placeholder="Label">
                 </div>
             </div>
             <div class="sidebar-team-block group-block">
-                <span class="block-label">Team</span>
-                <input type="button" class="block-add-button" name="addLink" value="+">
+                <div class="block-header">
+                    <span class="block-label">Team</span>
+                    <input type="button" class="block-add-button" name="addLink" value="+">
+                </div>
                 <div class="team-member">
                     <input type="text" class="editable-text-field" name="teamMember" placeholder="Team Member">
                 </div>
@@ -41,6 +47,7 @@
             <input type="checkbox" class="input-checkbox" name="audioGuide">
             <input type="text" class="editable-text-field" name="nextPage" placeholder="Next Page ID">
         </div>
+
         <div class="editor-page-content">
             <label for="mainPageStatus">Show Status?</label>
             <input type="checkbox" class="input-checkbox" name="mainPageStatus">
@@ -50,8 +57,10 @@
             <input type="text" class="editable-text-field" name="leadImage" placeholder="Lead Image Filename">
             <textarea name="editable-text-area" id="descriptionText" cols="80" rows="10"></textarea>
             <div class="image-gallery-block group-block">
-                <span class="block-label">Image Gallery</span>
-                <input type="button" class="block-add-button" name="addLink" value="+">
+                <div class="block-header">
+                    <span class="block-label">Image Gallery</span>
+                    <input type="button" class="block-add-button" name="addLink" value="+">
+                </div>
                 <div class="image">
                     <input type="text" class="editable-text-field" name="imageUrl" placeholder="Image Filename">
                     <textarea name="editable-text-area" id="imageCaption" cols="80" rows="3"></textarea>
@@ -59,7 +68,7 @@
             </div>
         </div>
     </div>
-    <div class="save-button">Save</div>
+    <div class="map-button">Exhibit #0</div>
     <script src="./editorMain.js"></script>
 </body>
 </html>
