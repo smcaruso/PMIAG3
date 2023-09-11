@@ -21,7 +21,11 @@ const pageContent = {
 
 const saveButton = document.querySelector(".save-button");
 saveButton.addEventListener("click", click => {
-    console.log(pageContent);
+    if (pageContent.id === null) {
+        alert("Choose a page ID before saving.");
+        return;
+    }
+    saveDataLocally();
 });
 
 ///// MULTI-TYPE CONSTRUCTORS
@@ -80,16 +84,52 @@ mapOverlay.setCloseButton.addEventListener("click", click => {
         UNLINKED <span class="exhibit-place-number">${mapOverlay.linkInput.value}</span> Open Map
         `;
     }
+
+    checkExistingPageContent(numericalInputField)
+    .then(data => {
+        if (data && confirm("Found existing content with this ID. Load for editing?")) {
+            loadContent(data);
+        }
+    })
+
     pageContent.id = numericalInputField;
     mapOverlay.modal.classList.add(mapOverlay.hideModalClass)
+    
 });
 
 ///// SIDEBAR FIELDS
 
-fetch("../content/page22.json")
+///// DATA HANDLING FUNCTIONS
+
+function checkExistingPageContent(id) {
+    let filepath = `../content/page${id}.json`;
+    return fetch(filepath)
     .then( response => {
         return response.json();
     })
     .then( data => {
-        console.log(data)
+        return data;
     })
+    .catch(error => {
+        console.warn("EDITOR: fetch error. Assuming no file found.");
+    })
+}
+
+function loadContent(data) {
+    console.log(data);
+}
+
+function saveDataLocally() {
+    const jsonData = JSON.stringify(pageContent);
+    const blob = new Blob([jsonData], {type: "application/json"});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `page${pageContent.id}.json`;
+    link.textContent = "Save + Export Content";
+    const hiddenLinkElement = document.body.appendChild(link);
+    hiddenLinkElement.click();
+    document.body.removeChild(hiddenLinkElement);
+    URL.revokeObjectURL(url);
+
+}
