@@ -1,5 +1,5 @@
 * {
-    font-family: 'agrandirregular', sans-serif;
+    font-family: 'agrandir', sans-serif;
 }
 
 html {
@@ -14,6 +14,7 @@ body {
     width: 100dvw;
     height: 100dvh;
     margin: 0;
+    overflow: scroll;
 }
 
 .map-button {
@@ -26,8 +27,90 @@ body {
     backdrop-filter: blur(0.25em);
     -webkit-backdrop-filter: blur(0.25em);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: #292828;
+    font-size: smaller;
+}
+
+.map-button span.exhibit-place-number {
+    font-size: 3em;
+    display: block;
+}
+
+.save-button {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 1em;
+    left: 1em;
+    width: 20dvh;
+    height: 5dvh;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #000000;
+}
+
+.map-overlay {
+    width: 86dvw;
+    height: 86dvh;
+    position: fixed;
+    top: 5dvh;
+    left: 5dvw;
+    background-color: rgba(0,0,0, 0.5);
+    border-radius: 1.5em;
+    padding: 2dvh 2dvw;
+    backdrop-filter: blur(0.25em);
+    -webkit-backdrop-filter: blur(0.25em);
+    box-shadow: 0.25em 0.25em 2em #000000;
+    transform-origin: top right;
+    transition: transform 0.25s;
+}
+
+.map-overlay.overlay-hidden {
+    transform: scaleY(0%);
+    transform-origin: top right;
+}
+
+.map-overlay .exhibit-link {
+    position: absolute;
+    top: calc(43dvh - 2em);
+    font-size: 3em;
+    right: 2dvw;
+    /* height: 10em; */
+    max-width: 5em;
+    border: none;
+    border-radius: 0.5em;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+}
+
+.map-overlay .modal-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: larger;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+
+.map-overlay input.modal-close-button {
+    background-color: #b4b4b4;
+    color: #000000;
+    /* width: 2em; */
+    height: 2em;
+    padding: 0 1em 0  1em;
+    box-shadow: none;
+    border: none;
+    border-radius: 1em;
+    /* transform: rotateZ(45deg); */
+}
+
+.map-overlay img {
+    height: 90%;
 }
 
 header.editor-head {
@@ -74,6 +157,14 @@ header.editor-head {
     flex-grow: 1;
 }
 
+.editor-page-content > * {
+    margin-bottom: 1em;
+}
+
+.editor-page-sidebar > * {
+    margin-bottom: 1em;
+}
+
 /* Input styles */
 
 .editable-text-field {
@@ -82,9 +173,22 @@ header.editor-head {
     line-height: 2em;
     background-color: rgba(255, 255, 255, 0.0);
     color: #ffffff;
-    border: dashed 1px rgba(255, 255, 255, 0.25);
+    border: dashed 1px rgba(255, 255, 255, 0.1);
     border-radius: 1em;
     padding: 0.5em 1em;
+    /* margin-bottom: 1em; */
+}
+
+.editable-text-area {
+    display: block;
+    width: 75%;
+    line-height: 2em;
+    background-color: rgba(255, 255, 255, 0.0);
+    color: #ffffff;
+    border: dashed 1px rgba(255, 255, 255, 0.1);
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    resize: vertical;
     /* margin-bottom: 1em; */
 }
 
@@ -102,81 +206,105 @@ header.editor-head {
     border-radius: 1em;
     width: 75%;
 }
+
 .block-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    font-size: larger;
+    font-weight: 600;
+    color: #cccccc;
+    margin-bottom: 0.75em;
 }
 
-.group-block .editable-text-field {
-    width: unset;
-    /* background-color: aqua; */
+.block-item.image {
+    background-color: #292828;
+    padding: 1em;
+    border-radius: 1.5em;
+
 }
 
 .block-add-button {
-    /* background-color: ; */
+    background-color: #b4b4b4;
+    color: #ffffff;
+    width: 2em;
+    height: 2em;
+    box-shadow: none;
+    border: none;
+    border-radius: 50%;
 }
 
+.check-label {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1em;
+    border-radius: 1em;
+    width: 75%;
+}
+
+/* FONT SETUP */
+
 @font-face {
-    font-family: 'agrandirbold';
+    font-family: 'agrandir';
     src: url('../fonts/agrandir-bold-webfont.woff2') format('woff2'),
          url('../fonts/agrandir-bold-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'agrandirbold_italic';
+    font-family: 'agrandir';
     src: url('../fonts/agrandir-bolditalic-webfont.woff2') format('woff2'),
          url('../fonts/agrandir-bolditalic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 600;
+    font-style: italic;
 }
 
 @font-face {
-    font-family: 'agrandiritalic';
+    font-family: 'agrandir';
     src: url('../fonts/agrandir-italic-webfont.woff2') format('woff2'),
          url('../fonts/agrandir-italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 400;
+    font-style: italic;
 }
 
 @font-face {
-    font-family: 'agrandirlight';
+    font-family: 'agrandir';
     src: url('../fonts/agrandir-light-webfont.woff2') format('woff2'),
          url('../fonts/agrandir-light-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'agrandirlight_italic';
+    font-family: 'agrandir';
     src: url('../fonts/agrandir-lightitalic-webfont.woff2') format('woff2'),
          url('../fonts/agrandir-lightitalic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 200;
+    font-style: italic;
 }
 
 @font-face {
-    font-family: 'agrandirmedium';
+    font-family: 'agrandir';
     src: url('../fonts/agrandir-medium-webfont.woff2') format('woff2'),
          url('../fonts/agrandir-medium-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'agrandirmedium_italic';
+    font-family: 'agrandir';
     src: url('../fonts/agrandir-mediumitalic-webfont.woff2') format('woff2'),
          url('../fonts/agrandir-mediumitalic-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'agrandirregular';
+    font-family: 'agrandir';
     src: url('../fonts/agrandir-regular-webfont.woff2') format('woff2'),
          url('../fonts/agrandir-regular-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -184,7 +312,7 @@ header.editor-head {
     font-family: 'gt_pressura_monobold';
     src: url('../fonts/gt-pressura-mono-bold-webfont.woff2') format('woff2'),
          url('../fonts/gt-pressura-mono-bold-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 600;
     font-style: normal;
 
 }
@@ -193,7 +321,7 @@ header.editor-head {
     font-family: 'gt_pressura_monoregular';
     src: url('../fonts/gt-pressura-mono-regular-webfont.woff2') format('woff2'),
          url('../fonts/gt-pressura-mono-regular-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
 
 }

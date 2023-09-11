@@ -39,36 +39,52 @@
                     <span class="block-label">Team</span>
                     <input type="button" class="block-add-button" name="addLink" value="+">
                 </div>
-                <div class="team-member">
+                <div class="block-item team-member">
                     <input type="text" class="editable-text-field" name="teamMember" placeholder="Team Member">
                 </div>
             </div>
-            <label for="audioGuide">Audio Guide?</label>
-            <input type="checkbox" class="input-checkbox" name="audioGuide">
+            <label class="check-label">
+                <input type="checkbox" class="input-checkbox" name="audioGuide">
+                Audio Guide?
+            </label>
             <input type="text" class="editable-text-field" name="nextPage" placeholder="Next Page ID">
         </div>
 
         <div class="editor-page-content">
-            <label for="mainPageStatus">Show Status?</label>
-            <input type="checkbox" class="input-checkbox" name="mainPageStatus">
+            <label class="check-label">
+                <input type="checkbox" class="input-checkbox" name="mainPageStatus">
+                Show Status From Sidebar?
+            </label>
             <input type="text" class="editable-text-field" name="pageTitle" placeholder="Page Title">
             <input type="text" class="editable-text-field" name="pageSubtitle" placeholder="Subtitle">
             <input type="text" class="editable-text-field" name="leadVideo" placeholder="Lead Video Filename">
             <input type="text" class="editable-text-field" name="leadImage" placeholder="Lead Image Filename">
-            <textarea name="editable-text-area" id="descriptionText" cols="80" rows="10"></textarea>
+            <textarea class="editable-text-area" id="descriptionText" cols="80" rows="10" placeholder="Main Description Text"></textarea>
             <div class="image-gallery-block group-block">
                 <div class="block-header">
                     <span class="block-label">Image Gallery</span>
                     <input type="button" class="block-add-button" name="addLink" value="+">
                 </div>
-                <div class="image">
+                <div class="block-item image">
                     <input type="text" class="editable-text-field" name="imageUrl" placeholder="Image Filename">
-                    <textarea name="editable-text-area" id="imageCaption" cols="80" rows="3"></textarea>
+                    <input type="text" class="editable-text-field" name="imageUrl" placeholder="Caption Title">
+                    <textarea class="editable-text-area" id="imageCaption" cols="80" rows="3" placeholder="Image Caption Text"></textarea>
                 </div>
             </div>
         </div>
     </div>
-    <div class="map-button">Exhibit #0</div>
+    <div class="map-button">
+        UNLINKED <span class="exhibit-place-number">0</span> Open Map
+    </div>
+    <div class="save-button">Save + Export Content</div>
+    <div class="map-overlay overlay-hidden">
+        <div class="modal-header">
+            <span class="modal-title">Choose or Unlink Exhibit Position</span>
+            <input type="button" class="modal-close-button" name="closeMap" value="Set + Close">
+        </div>
+        <img src="../images/editor/map-image.png" alt="">
+        <input type="number" min=0 class="exhibit-link" placeholder="ID #">
+    </div>
     <script src="./editorMain.js"></script>
 </body>
 </html>
