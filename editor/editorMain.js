@@ -1,3 +1,5 @@
+///// SERIALIZED PAGE CONTENT OBJECT
+
 const pageContent = {
     id: null,
     awardCategory: null,
@@ -97,7 +99,53 @@ mapOverlay.setCloseButton.addEventListener("click", click => {
     
 });
 
+//// HEADER FILEDS
+
+const header = {
+    category: document.querySelector("#headerCategory"),
+    title: document.querySelector("#headerTitle")
+}
+
 ///// SIDEBAR FIELDS
+
+const sidebar = {
+    status: document.querySelector("#sidebarStatus"),
+    title: document.querySelector("#sidebarTitle"),
+    category: document.querySelector("#sidebarCategory"),
+    about: document.querySelector("#sidebarAboutText"),
+    links: {
+        block: document.querySelector("#sidebarLinksBlock"),
+        add: document.querySelector("#addLink.block-add-button"),
+        proto: document.querySelector(".block-item.sidebar-link")
+    },
+    team: {
+        block: document.querySelector("#sidebarTeamBlock"),
+        add: document.querySelector("#addTeam.block-add-button"),
+        proto: document.querySelector(".block-item.team-member")
+    },
+    audioGuide: document.querySelector("#audioGuide"),
+    nextPage: document.querySelector("#nextPage")
+}
+
+///// MAIN PAGE FIELDS
+
+const page = {
+    status: document.querySelector("#mainPageStatus"),
+    title: document.querySelector("#pageTitle"),
+    subtitle: document.querySelector("#pageSubtitle"),
+    leadVido: document.querySelector("#leadVideo"),
+    leadImage: document.querySelector("#leadImage"),
+    description: document.querySelector("#descriptionText"),
+    images: {
+        block: document.querySelector(".image-gallery-block"),
+        add: document.querySelector("#addImage.block-add-button"),
+        proto: document.querySelector(".block-item.image")
+    }
+}
+
+///// STRUCT UPDATE EVENTS
+
+
 
 ///// DATA HANDLING FUNCTIONS
 

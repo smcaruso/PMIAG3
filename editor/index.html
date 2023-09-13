@@ -10,65 +10,65 @@
 <body>
     <header class="editor-head">
         <div class="editor-head-side">
-            <input type="text" class="editable-text-field header" name="headerCategory" placeholder="Award Category">
+            <input type="text" class="editable-text-field header" id="headerCategory" placeholder="Award Category">
         </div>
         <div class="editor-head-main">
-            <input type="text" class="editable-text-field header" name="headerTitle" placeholder="Award Title">
+            <input type="text" class="editable-text-field header" id="headerTitle" placeholder="Award Title">
         </div>
     </header>
 
     <div class="editor-page-container">
 
         <div class="editor-page-sidebar">
-            <input type="text" class="editable-text-field" name="sidebarStatus" placeholder="Award Status (Winner / Finalist / Recipient)">
-            <input type="text" class="editable-text-field" name="sidebarTitle" placeholder="Award Title">
-            <input type="text" class="editable-text-field" name="sidebarCategory" placeholder="Award Category">
-            <input type="text" class="editable-text-field" name="aboutText" placeholder="About This Award">
-            <div class="sidebar-links-block group-block">
+            <input type="text" class="editable-text-field" id="sidebarStatus" placeholder="Award Status (Winner / Finalist / Recipient)">
+            <input type="text" class="editable-text-field" id="sidebarTitle" placeholder="Award Title">
+            <input type="text" class="editable-text-field" id="sidebarCategory" placeholder="Award Category">
+            <input type="text" class="editable-text-field" id="sidebarAboutText" placeholder="About This Award">
+            <div class="sidebar-links-block group-block" id="sidebarLinksBlock">
                 <div class="block-header">
                     <span class="block-label">Links</span>
-                    <input type="button" class="block-add-button" name="addLink" value="+">
+                    <input type="button" class="block-add-button" id="addLink" value="+">
                 </div>
-                <div class="sidebar-link">
-                    <input type="text" class="editable-text-field" name="linkUrl" placeholder="URL">
-                    <input type="text" class="editable-text-field" name="linkLabel" placeholder="Label">
+                <div class="block-item sidebar-link">
+                    <input type="text" class="editable-text-field" id="linkUrl" placeholder="URL">
+                    <input type="text" class="editable-text-field" id="linkLabel" placeholder="Label">
                 </div>
             </div>
-            <div class="sidebar-team-block group-block">
+            <div class="sidebar-team-block group-block" id="sidebarTeamBlock">
                 <div class="block-header">
                     <span class="block-label">Team</span>
-                    <input type="button" class="block-add-button" name="addLink" value="+">
+                    <input type="button" class="block-add-button" id="addTeam" value="+">
                 </div>
                 <div class="block-item team-member">
-                    <input type="text" class="editable-text-field" name="teamMember" placeholder="Team Member">
+                    <input type="text" class="editable-text-field" placeholder="Team Member">
                 </div>
             </div>
             <label class="check-label">
-                <input type="checkbox" class="input-checkbox" name="audioGuide">
+                <input type="checkbox" class="input-checkbox" id="audioGuide">
                 Audio Guide?
             </label>
-            <input type="text" class="editable-text-field" name="nextPage" placeholder="Next Page ID">
+            <input type="text" class="editable-text-field" id="nextPage" placeholder="Next Page ID">
         </div>
 
         <div class="editor-page-content">
             <label class="check-label">
-                <input type="checkbox" class="input-checkbox" name="mainPageStatus">
+                <input type="checkbox" class="input-checkbox" id="mainPageStatus">
                 Show Status From Sidebar?
             </label>
-            <input type="text" class="editable-text-field" name="pageTitle" placeholder="Page Title">
-            <input type="text" class="editable-text-field" name="pageSubtitle" placeholder="Subtitle">
-            <input type="text" class="editable-text-field" name="leadVideo" placeholder="Lead Video Filename">
-            <input type="text" class="editable-text-field" name="leadImage" placeholder="Lead Image Filename">
+            <input type="text" class="editable-text-field" id="pageTitle" placeholder="Page Title">
+            <input type="text" class="editable-text-field" id="pageSubtitle" placeholder="Subtitle">
+            <input type="text" class="editable-text-field" id="leadVideo" placeholder="Lead Video Filename">
+            <input type="text" class="editable-text-field" id="leadImage" placeholder="Lead Image Filename">
             <textarea class="editable-text-area" id="descriptionText" cols="80" rows="10" placeholder="Main Description Text"></textarea>
             <div class="image-gallery-block group-block">
                 <div class="block-header">
                     <span class="block-label">Image Gallery</span>
-                    <input type="button" class="block-add-button" name="addLink" value="+">
+                    <input type="button" class="block-add-button" id="addImage" value="+">
                 </div>
                 <div class="block-item image">
-                    <input type="text" class="editable-text-field" name="imageUrl" placeholder="Image Filename">
-                    <input type="text" class="editable-text-field" name="imageUrl" placeholder="Caption Title">
-                    <textarea class="editable-text-area" id="imageCaption" cols="80" rows="3" placeholder="Image Caption Text"></textarea>
+                    <input type="text" class="editable-text-field image-filename" placeholder="Image Filename">
+                    <input type="text" class="editable-text-field caption-title" placeholder="Caption Title">
+                    <textarea class="editable-text-area image-caption" cols="80" rows="3" placeholder="Image Caption Text"></textarea>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
     <div class="map-overlay overlay-hidden">
         <div class="modal-header">
             <span class="modal-title">Choose or Unlink Exhibit Position</span>
-            <input type="button" class="modal-close-button" name="closeMap" value="Set + Close">
+            <input type="button" class="modal-close-button" id="closeMap" value="Set + Close">
         </div>
         <img src="../images/editor/map-image.png" alt="">
         <input type="number" min=0 class="exhibit-link" placeholder="ID #">
