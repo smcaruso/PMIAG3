@@ -13,7 +13,7 @@ const pageContent = {
     nextPage: null,
     dupeStatus: false,
     pageTitle: null,
-    byline: null,
+    subtitle: null,
     leadVideo: null,
     leadImage: null,
     description: null,
@@ -99,49 +99,43 @@ mapOverlay.setCloseButton.addEventListener("click", click => {
     
 });
 
-//// HEADER FILEDS
+//// PAGE FIELDS
 
-const header = {
-    category: document.querySelector("#headerCategory"),
-    title: document.querySelector("#headerTitle")
-}
+const _ = new Map();
+_.set(pageContent.awardCategory, document.querySelector("#headerCategory"));
+_.set(pageContent.titleBarTitle, document.querySelector("#headerTitle"));
+_.set(pageContent.awardStatus, document.querySelector("#sidebarStatus"));
+_.set(pageContent.sidebarTitle, document.querySelector("#sidebarTitle"));
+_.set(pageContent.links, {
+    block: document.querySelector("#sidebarLinksBlock"),
+    add: document.querySelector("#addLink.block-add-button"),
+    proto: document.querySelector(".block-item.sidebar-link")
+});
+_.set(pageContent.audioGuide, document.querySelector("#audioGuide"));
+_.set(pageContent.aboutText, document.querySelector("#sidebarAboutText"));
+_.set(pageContent.team, {
+    block: document.querySelector("#sidebarTeamBlock"),
+    add: document.querySelector("#addTeam.block-add-button"),
+    proto: document.querySelector(".block-item.team-member")
+});
+_.set(pageContent.nextPage, document.querySelector("#nextPage"));
+_.set(pageContent.dupeStatus, document.querySelector("#mainPageStatus"));
+_.set(pageContent.pageTitle, document.querySelector("#pageTitle"));
+_.set(pageContent.subtitle, document.querySelector("#pageSubtitle"));
+_.set(pageContent.leadVideo, document.querySelector("#leadVideo"));
+_.set(pageContent.leadImage, document.querySelector("#leadImage"));
+_.set(pageContent.description, document.querySelector("#descriptionText"));
+_.set(pageContent.images,{
+    block: document.querySelector(".image-gallery-block"),
+    add: document.querySelector("#addImage.block-add-button"),
+    proto: document.querySelector(".block-item.image")
+});
+_.set(pageContent.creditGrid, {
+    block: document.querySelector(".credit-grid-block"),
+    add: document.querySelector("#addCredit.block-add-button"),
+    proto: document.querySelector(".block-item.credit")
+});
 
-///// SIDEBAR FIELDS
-
-const sidebar = {
-    status: document.querySelector("#sidebarStatus"),
-    title: document.querySelector("#sidebarTitle"),
-    category: document.querySelector("#sidebarCategory"),
-    about: document.querySelector("#sidebarAboutText"),
-    links: {
-        block: document.querySelector("#sidebarLinksBlock"),
-        add: document.querySelector("#addLink.block-add-button"),
-        proto: document.querySelector(".block-item.sidebar-link")
-    },
-    team: {
-        block: document.querySelector("#sidebarTeamBlock"),
-        add: document.querySelector("#addTeam.block-add-button"),
-        proto: document.querySelector(".block-item.team-member")
-    },
-    audioGuide: document.querySelector("#audioGuide"),
-    nextPage: document.querySelector("#nextPage")
-}
-
-///// MAIN PAGE FIELDS
-
-const page = {
-    status: document.querySelector("#mainPageStatus"),
-    title: document.querySelector("#pageTitle"),
-    subtitle: document.querySelector("#pageSubtitle"),
-    leadVido: document.querySelector("#leadVideo"),
-    leadImage: document.querySelector("#leadImage"),
-    description: document.querySelector("#descriptionText"),
-    images: {
-        block: document.querySelector(".image-gallery-block"),
-        add: document.querySelector("#addImage.block-add-button"),
-        proto: document.querySelector(".block-item.image")
-    }
-}
 
 ///// STRUCT UPDATE EVENTS
 
@@ -181,3 +175,49 @@ function saveDataLocally() {
     URL.revokeObjectURL(url);
 
 }
+
+/*
+// replaced with map:
+
+const header = {
+    category: document.querySelector("#headerCategory"),
+    title: document.querySelector("#headerTitle")
+}
+
+const sidebar = {
+    status: document.querySelector("#sidebarStatus"),
+    title: document.querySelector("#sidebarTitle"),
+    category: document.querySelector("#sidebarCategory"),
+    about: document.querySelector("#sidebarAboutText"),
+    links: {
+        block: document.querySelector("#sidebarLinksBlock"),
+        add: document.querySelector("#addLink.block-add-button"),
+        proto: document.querySelector(".block-item.sidebar-link")
+    },
+    team: {
+        block: document.querySelector("#sidebarTeamBlock"),
+        add: document.querySelector("#addTeam.block-add-button"),
+        proto: document.querySelector(".block-item.team-member")
+    },
+    audioGuide: document.querySelector("#audioGuide"),
+    nextPage: document.querySelector("#nextPage")
+}
+const page = {
+    status: document.querySelector("#mainPageStatus"),
+    title: document.querySelector("#pageTitle"),
+    subtitle: document.querySelector("#pageSubtitle"),
+    leadVideo: document.querySelector("#leadVideo"),
+    leadImage: document.querySelector("#leadImage"),
+    description: document.querySelector("#descriptionText"),
+    images: {
+        block: document.querySelector(".image-gallery-block"),
+        add: document.querySelector("#addImage.block-add-button"),
+        proto: document.querySelector(".block-item.image")
+    },
+    creditGrid: {
+        block: document.querySelector(".credit-grid-block"),
+        add: document.querySelector("#addCredit.block-add-button"),
+        proto: document.querySelector(".block-item.credit")
+    }
+}
+*/

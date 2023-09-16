@@ -217,11 +217,10 @@ header.editor-head {
     margin-bottom: 0.75em;
 }
 
-.block-item.image {
+.block-item.image, .block-item.credit {
     background-color: #292828;
     padding: 1em;
     border-radius: 1.5em;
-
 }
 
 .block-add-button {
