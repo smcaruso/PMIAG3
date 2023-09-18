@@ -4,35 +4,36 @@
     "titleBarTitle": "Silt Is...",
     "awardStatus": "Most Coolest",
     "sidebarTitle": "My Great Page",
+    "sidebarCategory": "Neato Category",
     "links": [
         {
-            "linkTitle": "filename.png",
-            "linkURL": "https://www.smcaruso.com/"
+            "linkUrl": "https://www.smcaruso.com/",
+            "linkLabel": "filename.png"
         }
     ],
-    "audioGuide": null,
+    "audioGuide": true,
     "aboutText": "Now this, this is one hell of a sentence. Wow!",
     "team": ["Grace", "Hedy"],
     "nextPage": 32,
-    "dupeStatus": false,
+    "dupeStatus": true,
     "pageTitle": "Even Better Now",
-    "byline": "What's this for, again?",
+    "subtitle": "What's this for, again?",
     "leadVideo": "goodmorning.mp4",
     "leadImage": "ex22img0.png",
-    "description": "Four score and seven years ago I forgot the rest of this speech",
+    "description": ["Four score and seven years ago I forgot the rest of this speech","A second paragraph is here now."],
     "images": [
         {
             "imageFilename": "ex22img1.png",
             "captionTitle": "Cool caption!",
-            "captionText": "If you look closely you can see my friend Bob"
+            "imageCaption": "If you look closely you can see my friend Bob"
         }
     ],
     "creditGrid": [
         {
-            "imageFilename": "ex22img2.png",
-            "entryName": "Linda Barbacoa",
-            "description": "A beautiful meat!",
-            "location": "Gettysburg, PA"
+            "creditImageFilename": "ex22img2.png",
+            "creditName": "Linda Barbacoa",
+            "creditDescription": "A beautiful meat!",
+            "creditLocation": "Gettysburg, PA"
         }
     ]
 }

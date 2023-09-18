@@ -207,6 +207,10 @@ header.editor-head {
     width: 75%;
 }
 
+.group-block.sidebar-links-block {
+    padding-bottom: 0;
+}
+
 .block-header {
     display: flex;
     justify-content: space-between;
@@ -217,10 +221,15 @@ header.editor-head {
     margin-bottom: 0.75em;
 }
 
-.block-item.image, .block-item.credit {
+.block-item.image, .block-item.credit, .block-item.sidebar-link {
     background-color: #292828;
     padding: 1em;
+    margin-bottom: 1em;
     border-radius: 1.5em;
+}
+
+.block-item.invalid-entry {
+    border: 1px solid #ff0000;
 }
 
 .block-add-button {
