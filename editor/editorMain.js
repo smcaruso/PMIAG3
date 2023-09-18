@@ -239,6 +239,7 @@ function loadContent(data) {
     // Clear previously filled/loaded content blocks
     let blocks = document.querySelectorAll(".block-item");
     blocks.forEach( block => { block.remove(); })
+    page.description.value = "";
 
     // Fill page content fields from loaded data
     header.category.value = data.awardCategory;
@@ -298,6 +299,15 @@ function loadContent(data) {
 }
 
 function saveDataLocally() {
+
+    // reprocess complex blocks, mouseleave event may not be captured if tabbed through
+
+    processBlock(sidebar.links.list, "links");
+    processTeam(sidebar.team.list);
+    processDescription(page.description.value);
+    processBlock(page.images.list, "images");
+    processBlock(page.creditGrid.list, "creditGrid");
+    
     const jsonData = JSON.stringify(pageContent);
     const blob = new Blob([jsonData], {type: "application/json"});
     const url = URL.createObjectURL(blob);
