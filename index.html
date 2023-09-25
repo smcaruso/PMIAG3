@@ -2,12 +2,69 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="intro closed">
+      <div class="welcome closed">
+          <div class="leftcol">
+              <div class="awardsgallerylogo welcomeleftblock">
+                  <img src="./images/pmi-awards-gallery-logo.svg" alt="PMI Awards Gallery">
+              </div>
+              <div class="welcometext welcomeleftblock">
+                  Welcome to the  PMI Awards Gallery — honoring the people, ideas and outstanding teamwork leading us all toward a brighter future. Learn about our finalists and winners from the 2022 PMI Professional Awards, Chapter Awards, and Research & Academic Awards.
+                  <span class="eval"><a href="https://awards.pmi.org/#evaluators" target="_blank">Meet the 2022 Evaluators</a></span>
+              </div>
+              <div class="instructions welcomeleftblock">
+                  <p class="navtip">Navigation tips</span>
+                  <div class="instructiontext wall">
+                      <img class="icon" src="./images/wall-anim.gif">
+                      <div class="instructionlabel">Click or tap and drag your cursor to look around.</div>
+                  </div>
+                  <div class="instructiontext floor">
+                      <img class="icon" src="./images/floor-anim.gif">
+                      <div class="instructionlabel">Click or tap the floor to move to the position shown by the blue ring.</div>
+                  </div>
+                  <div class="instructiontext exhibit">
+                      <img class="icon" src="./images/exhibit-anim.gif">
+                      <div class="instructionlabel">Click or tap on framed exhibits to see video and imagery about our finalists and winners.</div>
+                  </div>
+                  <div class="instructiontext scroll">
+                      <img class="icon" src="./images/pinch-anim.gif">
+                      <div class="instructionlabel">Pinch in and out to zoom.</div>
+                  </div>
+                  <div class="instructiontext audio">
+                      <img class="icon" src="./images/audio-anim.gif">
+                      <div class="instructionlabel">Click or tap on the headphone icon inside each exhibit to listen to the audio tour.</div>
+                  </div>
+              </div>
+              <div class="helpline welcomeleftblock">
+                  Having trouble? Make sure Javascript is enabled in your browser. For connection or loading issues, refer to your browser's documentation: <a href="https://support.google.com/chrome/answer/6098869?hl=en&ref_topic=7439544" target="_blank">Chrome</a> / <a href="https://support.microsoft.com/en-us/microsoft-edge/what-to-do-if-microsoft-edge-isn-t-working-cc0657a6-acd2-cbbd-1528-c0335c71312a" target="_blank">Edge</a> / <a href="https://support.mozilla.org/en-US/kb/websites-dont-load-troubleshoot-and-fix-errors" target="_blank">Firefox</a> / <a href="https://support.apple.com/guide/safari/troubleshooting-sfri11861/mac" target="_blank">Safari</a>
+                  <span class="endlinks"><a href="https://www.pmi.org/terms">Terms of Use</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.pmi.org/privacy">Privacy Policy</a></span>
+              </div>
+          </div>
+          <div class="rightcol">
+              <div class="introvideo">
+                  <video src="./videos/intro22.mp4" poster="./images/introposter.jpg" controls autoplay></video>
+                  <p>
+                      This 360-degree experience honors the best of the best in project management this year in a variety of categories.
+                  </p>
+                  <p>
+                      Once you enter the gallery, navigate by clicking or tapping on the floor, walls and exhibits. To jump to an exhibit, use the menu on the lower left. Explore and enjoy!
+                  </p>
+              </div>
+              <!-- <div class="introtext">
+              </div> -->
+              <div class="loadingstuff">
+                  <div class="loadingtext">Please wait while the gallery loads.</div>
+                  <div class="loadingbar"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>

@@ -1,97 +1,740 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+* {
+  font-family: 'agrandir', sans-serif;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+/* INTRO SCREEN */
 
-body {
-  margin: 0;
+.intro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  background-color: #161616ed;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.intro.closed {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background: none;
+  transition: backdrop-filter 1s, background 1.5s;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.intro .welcome {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 10vw;
+  padding: 10vh;
+  margin-right: 5vw;
+  height: 80vh;
+}
+
+.intro .welcome.closed {
+  opacity: 0;
+  top: 0px;
+  transition: opacity 0.5s, top 0.5s;
+}
+
+.intro .welcome.loaded:hover {
+  cursor: pointer;
+}
+
+.intro .welcome .leftcol {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.intro .welcome .leftcol .welcomeleftblock {
+  flex-grow: 0;
+  border-top: 1px solid #ffffff;
+  padding-top: 1em;
+  color: #ffffff;
+}
+
+.intro .welcome .leftcol .welcometext {
+  font-family: 'agrandir', sans-serif;
+  font-weight: 600;
+  font-size: .9em;
+  line-height: 1.35em;
+  margin-bottom: 2em;
+}
+
+.intro .welcome .leftcol .welcometext span.eval {
+  color: #ffffff;
+  display: block;
+  font-size: large;
+  font-weight: 600;
+  margin-top: 1em;
+}
+
+.intro .welcome .leftcol .welcometext span.eval a {
+  color: #ffffff;
+}
+
+.intro .welcome .leftcol .awardsgallerylogo {
+  width: 50%;
+  border-top: none;
+  flex-grow: 1;
+}
+
+.intro .welcome .instructions {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #ffffff;
+  margin-bottom: 6em;
+}
+
+.intro .welcome .instructions .navtip {
+  font-family: 'agrandirlight', sans-serif;
+  font-size: smaller;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.intro .welcome .instructions .instructiontext {
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 3em;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.intro .welcome .instructions .instructiontext .icon {
+  height: 4em;
+  margin-right: 2em;
+}
+
+.intro .welcome .instructions .instructiontext .instructionlabel {
+  font-family: 'agrandir', sans-serif;
+  font-weight: 600;
+  font-size: .9em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 3;
+  margin-top: 0;
+  margin-bottom: auto;
+}
+
+.intro .helpline {
+  color: #ffffff;
+  font-size: small;
+  font-family: 'gt_pressura_monoregular';
+  
+}
+
+.intro .helpline a {
+  color: #eeeeee;
+  text-decoration: none;
+  font-family: 'gt_pressura_monoregular';
+}
+
+.intro .helpline span.endlinks {
+  display: block;
+  margin-top: 1em;
+}
+
+.intro .helpline a:visited {
+  color: #E5DCF2;
+}
+
+.intro .welcome .rightcol {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+
+.intro .welcome .rightcol .introvideo video {
+  max-width: 100%;
+}
+
+.intro .welcome .rightcol .introvideo p {
+  font-family: 'gt_pressura_monoregular';
+  font-size: medium;
+  line-height: 1.5em;
+  margin-top: 1em;
+}
+
+.intro .welcome .rightcol .loadingstuff p.eval {
+  font-family: 'agrandir', sans-serif;
+  font-weight: 600;
+  font-size: small;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.intro .welcome .rightcol .loadingstuff p.eval a {
+  color: #ffffff;
+}
+
+.intro .welcome .rightcol .loadingstuff {
+  margin: 0;
+  cursor: not-allowed;
+}
+
+.intro .welcome .rightcol .loadingstuff.loaded {
+  cursor: pointer;
+}
+
+.intro .welcome .loadingtext {
+  font-family: 'agrandir', sans-serif;
+  font-weight: 600;
+  font-size: larger;
+  background: transparent linear-gradient(95deg, #FF7E15 0%, #8A377F 40%, #23BEE2 100%) 0% 0% no-repeat padding-box;
+  box-shadow: -3px 3px 36px #B54A5B;
+  color: #ffffff;
+  line-height: 50px;
+  text-align: center;
+  width: 100%;
+  flex-grow: 0;
+}
+
+.intro .welcome .loadingbar {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffffff;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.5s;
+  will-change: transform;
+}
+
+.intro .welcome .loadingbar.loaded {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.enterbutton {
+  visibility: hidden;
+}
+
+/* EXHIBIT PAGE STYLES */
+
+.exhibit-infopanel {
+  z-index: 1;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.exhibit-infopanel .topspacer {   
+  height: calc(100% - 100px);
+  margin: 0;
+  padding: 0;
+}
+
+.exhibit-infopanel:hover {
+  cursor: default;
+}
+
+.exhibit-infopanel .titlebar {
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 100px;
+  position: sticky;
+  top: 0px;
+  width: calc(100% + 100px);
+  font-family: 'agrandir';
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 100px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
+.exhibit-infopanel .titlebar .type {
+  height: 100%;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  grid-column: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  padding-left: 150px;
 }
 
-.read-the-docs {
-  color: #888;
+.exhibit-infopanel .titlebar .type.purple {
+  background-color: #2B008Cb4;
+  color: #ffffff;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.exhibit-infopanel .titlebar .type.blue {
+  background-color: #0080A8b4;
+  color: #ffffff;
+}
+
+.exhibit-infopanel .titlebar .type.orange {
+  background-color: #DD310Bb4;
+  color: #ffffff;
+}
+
+.exhibit-infopanel .titlebar .award {
+  height: 100%;
+  background-color: #ecececb4;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  grid-column: 2 / 3;
+  font-family: 'agrandir';
+  font-weight: 200;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+  padding-left: 50px;
+  margin-right: 200px
+}
+
+.exhibit-infopanel .titlebar .openclosebutton {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  right: 100px;
+  bottom: 0px;
+  background-color: #ecececb4;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  font-size: smaller;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  text-transform: uppercase;
+  line-height: 100px;
+}
+
+.exhibit-infopanel .titlebar .openclosebutton img {
+  height: 15px;
+  width: 15px;
+  padding: 5px;
+  transform: translateY(-2px);
+}
+
+.exhibit-infopanel .titlebar:hover {
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.exhibitpage {
+  top: 100px;
+  min-height: calc(100% - 200px);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 100px;
+  color: #ffffff;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+.exhibitpage.purple {   
+  background-color: #2B008C;
+}
+
+.exhibitpage.blue {  
+  background-color: #0080A8;
+}
+
+.exhibitpage.orange {  
+  background-color: #DD310B;
+  min-height: 100%;
+}
+
+.exhibitpage .leftcolumn {   
+  grid-column: 1;
+  padding-right: 50px;
+}
+
+.exhibitpage .leftcolumn .leftstuff {
+  position: sticky;
+  top: 150px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0;
+}
+
+.exhibitpage .rightcolumn { 
+  grid-column: 2 / 3;
+}
+
+.exhibitpage .title {
+  margin-top: 50px;
+  font-size: 50px;
+  line-height: 1em;
+  -ms-hyphens: none;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+.exhibitpage .status {
+  font-family: 'agrandir';
+  font-weight: 200;
+  font-size: 50px;
+}
+
+.exhibitpage .status span.subtitle {
+  display: block;
+  font-size: medium;
+  font-weight: 600;
+  margin-bottom: 0.75em;
+}
+
+.exhibitpage .academicaward {
+  font-size: larger;
+  margin-bottom: 25px;
+}
+
+.exhibitpage .aboutacademicawards {
+  font-style: italic;
+  margin-bottom: 25px;
+  max-width: 500px;
+}
+
+.exhibitpage .awardtitlesidebar {
+  font-size: smaller;
+  font-family: 'agrandirlight';
+  margin-bottom: 1em;
+}
+
+.exhibitpage .leadvideo {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+.exhibitpage .leadvideo video {
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.exhibitpage .leadvideo img {
+  width: 100%;
+  height: 100%;
+}
+
+.exhibitpage.maintext {
+  text-align: justify ;
+  text-justify: inter-word;
+}
+
+.exhibitpage .maintext p {
+  margin-top: 10px;
+  line-height: 1.3;
+}
+
+.exhibitpage .maintext h3 {
+  margin-top: 20px;
+}
+
+.exhibitpage .maintext ul {
+  margin-top: 10px;
+  margin-left: 1em;
+}
+
+.exhibitpage .maintext li {
+  font-family: 'agrandir';
+  font-weight: 200;
+  line-height: 1.5;
+  font-size: medium;
+  display: list-item;
+  list-style: square;
+}
+
+.exhibitpage .maintext .chapterlogo {
+  background-color: #ffffff;
+  width: 75%;
+  margin: 2em 0 2em 0;
+}
+
+.exhibitpage .maintext .chapterlogo img {
+  width: 100%;
+  height: 100%;
+}
+
+.exhibitpage .paitContent {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+  margin-top: 5em;
+}
+
+/* .exhibitpage .paitContent .teamster {
+} */
+
+.exhibitpage .paitContent .teamster .photo img {
+  width: 100%;
+}
+
+.exhibitpage .paitContent .teamster .textbox {
+  margin-top: 2em;
+}
+
+.exhibitpage .paitContent .teamster .textbox .name {
+  font-weight: 600;
+  font-size: medium;
+  margin-bottom: 0.5em;
+}
+
+.exhibitpage .paitContent .teamster .textbox .name span.cred {
+  font-weight: 200;
+}
+
+.exhibitpage .paitContent .teamster .textbox .company {
+  font-size: small;
+}
+
+.exhibitpage .paitContent .teamster .textbox .location {
+  font-size: small;
+  font-family: 'gt_pressura_monoregular', monospace;
+  margin-top: 0.5em;
+}
+
+.exhibitpage .audioguide {
+  background-image: url("./images/audio.png");
+  width: 220px;
+  margin-top: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.exhibitpage .audioguide:hover {
+  cursor: pointer;
+}
+
+.exhibitpage .audioguide ul.audiotextbox {
+  margin-left: 70px;
+}
+
+.exhibitpage .audioguide .audiotextbox li {
+  font-size: medium;
+}
+
+.exhibitpage .audioguide .audioheadline {
+  font-family: 'agrandir';
+  font-weight: 600;
+}
+
+.exhibitpage .audioguide .audiotimestamp {
+  font-family: 'agrandir';
+}
+
+.exhibitpage .aboutthisaward {
+  margin-top: 50px;
+  max-width: 500px;
+}
+
+.exhibitpage .aboutthisaward p {
+  font-family: 'gt_pressura_monoregular', monospace;
+  margin-top: 10px;
+  font-size: smaller;
+}
+
+.exhibitpage .aboutthisaward .aboutheading {
+  font-family: 'agrandir';
+}
+
+.exhibitpage .aanextbutton {
+  position: sticky;
+  bottom: 0px;
+  width: 100%;
+  max-width: 500px;
+  color: #2B008C;
+  background-color: #ffffff;
+  margin-top: 50px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  font-family: 'agrandirlight';
+}
+
+.exhibitpage .aanextbutton img {
+  height: 0.75em;
+  padding-left: 0.25em;
+}
+
+.exhibitpage .aanextbutton:hover {
+  cursor: pointer;
+}
+
+.exhibitpage .photogallery {
+  display: block;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.exhibitpage .photogallery .photoitem {
+  position: relative;
+}
+
+.exhibitpage .photogallery .photoitem .photo {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #fff;
+  max-width: 100%;
+  height: auto;
+}
+
+.exhibitpage .photogallery .photoitem .photonumber {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 3px;
+  background-color: #d9d9d9c2;
+  color: #000000;
+  font-size: smaller;
+
+}
+
+.exhibitpage .photogallery .photoitem .caption {
+  display: block;
+  font-family: 'gt_pressura_monoregular';
+  font-size: smaller;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.exhibitpage a {
+  color: #ffffff;
+}
+
+.exhibitpage a:visited {
+  color: #ffffff;
+}
+
+.exhibitpage .teamlist {
+  display: block;
+  font-family: 'gt_pressura_monoregular';
+  list-style: none;
+  font-size: smaller;
+  margin-top: 50px;
+}
+
+.exhibitpage li {
+  display: block;
+  font-family: 'gt_pressura_monoregular';
+  list-style: none;
+  font-size: smaller;
+
+}
+
+.exhibitpage .linkslist a {
+  font-family: 'gt_pressura_monoregular';
+  font-size: smaller;
+}
+
+
+/* FONT SETUP */
+
+@font-face {
+  font-family: 'agrandir';
+  src: url('./fonts/agrandir-bold-webfont.woff2') format('woff2'),
+       url('./fonts/agrandir-bold-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'agrandir';
+  src: url('./fonts/agrandir-bolditalic-webfont.woff2') format('woff2'),
+       url('./fonts/agrandir-bolditalic-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'agrandir';
+  src: url('./fonts/agrandir-italic-webfont.woff2') format('woff2'),
+       url('./fonts/agrandir-italic-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'agrandir';
+  src: url('./fonts/agrandir-light-webfont.woff2') format('woff2'),
+       url('./fonts/agrandir-light-webfont.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'agrandir';
+  src: url('./fonts/agrandir-lightitalic-webfont.woff2') format('woff2'),
+       url('./fonts/agrandir-lightitalic-webfont.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'agrandir';
+  src: url('./fonts/agrandir-medium-webfont.woff2') format('woff2'),
+       url('./fonts/agrandir-medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'agrandir';
+  src: url('./fonts/agrandir-mediumitalic-webfont.woff2') format('woff2'),
+       url('./fonts/agrandir-mediumitalic-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'agrandir';
+  src: url('./fonts/agrandir-regular-webfont.woff2') format('woff2'),
+       url('./fonts/agrandir-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gt_pressura_monobold';
+  src: url('./fonts/gt-pressura-mono-bold-webfont.woff2') format('woff2'),
+       url('./fonts/gt-pressura-mono-bold-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'gt_pressura_monoregular';
+  src: url('./fonts/gt-pressura-mono-regular-webfont.woff2') format('woff2'),
+       url('./fonts/gt-pressura-mono-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+
 }
