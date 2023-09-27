@@ -1,9 +1,10 @@
 export class Page {
 
-    constructor(id, welcome) {
+    constructor(id, welcome, fullPage = false) {
 
         this.data = {};
         this.color = 0;
+        this.fullPage = fullPage;
 
         this.container = document.createElement("div");
         this.container.classList.add("exhibit-infopanel");
@@ -21,6 +22,7 @@ export class Page {
                 console.log("Creating exhibit page for", this.data);
                 this.setColor(data.id);
                 this.buildPage(this.data);
+                welcome.parentElement.remove();
             } else {
 
                 // replace the welcome page if there is no page to create
@@ -65,12 +67,24 @@ export class Page {
         this.pageBody.append(this.buildSidebar(data), this.buildMain(data));
         this.container.append(this.buildTitlebar(data), this.pageBody);
 
-        console.log(this.container)
         document.body.append(this.container);
-
+        if (this.fullPage) {
+            this.container.scroll({
+                top: 100,
+                behavior: "instant"
+            });
+        }
+        if (data.leadVideo) { this.resizeVideo(this.pageBody.querySelector(".leadvideo")); }
     }
 
     buildTitlebar(data) {
+
+        if (!this.fullPage) {
+            const topSpacer = document.createElement("div");
+            topSpacer.classList.add("topspacer");
+            topSpacer.addEventListener("pointerup", exit.bind(this));
+            this.container.append(topSpacer);
+        }
 
         const category = document.createElement("div");
         category.classList.add("type", this.color);
@@ -91,8 +105,43 @@ export class Page {
         openCloseButton.append(buttonLabel, icon);
 
         this.titlebar.append(category, title, openCloseButton);
+        this.titlebar.addEventListener("pointerup", scrollToTop.bind(this));
 
         return this.titlebar;
+
+        function scrollToTop(event) {
+
+            let top = window.innerHeight;
+
+            if (this.fullPage) {
+                top = 100;
+                if (window.innerWidth < 420) {
+                    top = 0;
+                }
+            }
+
+            this.container.scroll({
+                top: top,
+                behavior: "smooth"
+            });
+
+            if (this.fullPage) return;
+
+            openCloseButton.removeEventListener("pointerup", scrollToTop);
+            openCloseButton.querySelector("span").innerText = "Close";
+            openCloseButton.querySelector("img").src = "./images/close.png";
+            openCloseButton.addEventListener("pointerup", exit.bind(this));
+        }
+
+        function exit(event) {
+
+            this.container.scroll({
+                top: 0,
+                behavior: "smooth"
+            });
+            this.container.remove();
+            
+        }
 
     }
 
@@ -264,7 +313,11 @@ export class Page {
             nextButton.classList.add("aanextbutton");
             nextButton.innerHTML = `Next Page <img src="./images/leftarrow.png">`;
 
-            // todo connect button to event listener
+            nextButton.addEventListener("pointerup", e => {
+                this.container.remove();
+                const nextPage = new Page(data.nextPage);
+                nextPage.color = this.color;
+            });
 
             sidebarContents.append(nextButton);
 
@@ -315,6 +368,7 @@ export class Page {
             `;
 
             leadVideo.classList.add("leadvideo");
+            window.addEventListener("resize", e => { this.resizeVideo(leadVideo) });
 
             mainContents.append(leadVideo);
 
@@ -355,8 +409,7 @@ export class Page {
                 let imageBlock =  document.createElement("div");
                 imageBlock.classList.add("photoitem");
                 imageBlock.innerHTML = `
-                <div class = "photoitem">
-                    <img class = "photo" src="${data.images[index].imageFilename}">
+                    <img class = "photo" src="./images/pageimages/${data.images[index].imageFilename}">
                     <div class = "photonumber">
                         ${index+1} of ${data.images.length}
                     </div>
@@ -366,7 +419,6 @@ export class Page {
                     <p class = "caption">
                         ${data.images[index].imageCaption}
                     </p>
-                </div>
                 `
                 imageGallery.appendChild(imageBlock)
     
@@ -428,22 +480,11 @@ export class Page {
 
     }
 
+    resizeVideo(videoElement) {
+
+        let newHeight = videoElement.clientWidth * 0.5625;
+        videoElement.style.height = `${newHeight}px`;
+
+    }
+
 }
-
-/*
-<div class="teamster">
-    <div class="photo">
-        <img src="./images/pait/05.jpeg">
-    </div>
-    <div class="textbox">
-        <div class="name">Rosemary Imhanwa, <span class="cred">PMP®</span></div>
-        <div class="company">Managing Partner, Kedahan Services Ltd</div>
-        <div class="location">Nigeria</div>
-    </div>
-</div>
-
-                    <input type="text" class="creditImageFilename editable-text-field" placeholder="Image Filename">
-                    <input type="text" class="creditName editable-text-field" placeholder="Name">
-                    <input type="text" class="creditDescription editable-text-field" placeholder="Description">
-                    <input type="text" class="creditLocation editable-text-field" placeholder="Location">
-*/

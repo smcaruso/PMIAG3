@@ -25,6 +25,8 @@
   backdrop-filter: none;
   background: none;
   transition: backdrop-filter 1s, background 1.5s;
+
+  display: none;
 }
 
 .intro .welcome {
@@ -371,6 +373,9 @@
   max-width: fit-content;
   margin: 0;
 }
+.exhibitpage ul {
+  padding: 0;
+}
 
 .exhibitpage .rightcolumn { 
   grid-column: 2 / 3;
@@ -410,8 +415,9 @@
 }
 
 .exhibitpage .awardtitlesidebar {
+  font-family: 'agrandir';
+  font-weight: 200;
   font-size: smaller;
-  font-family: 'agrandirlight';
   margin-bottom: 1em;
 }
 
@@ -573,7 +579,8 @@
   justify-content: center;
   align-items: center;
   font-size: larger;
-  font-family: 'agrandirlight';
+  font-family: 'agrandir';
+  font-weight: 200;
 }
 
 .exhibitpage .aanextbutton img {
@@ -615,6 +622,12 @@
   color: #000000;
   font-size: smaller;
 
+}
+.exhibitpage .photogallery .photoitem .caption.title {
+  font-family: "agrandir";
+  font-weight: 600;
+  font-size: unset;
+  margin-bottom: 0;
 }
 
 .exhibitpage .photogallery .photoitem .caption {
