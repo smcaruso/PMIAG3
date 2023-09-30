@@ -408,18 +408,31 @@ export class Page {
     
                 let imageBlock =  document.createElement("div");
                 imageBlock.classList.add("photoitem");
-                imageBlock.innerHTML = `
-                    <img class = "photo" src="./images/pageimages/${data.images[index].imageFilename}">
-                    <div class = "photonumber">
-                        ${index+1} of ${data.images.length}
-                    </div>
-                    <p class = "caption title">
-                        ${data.images[index].captionTitle}
-                    </p>
-                    <p class = "caption">
-                        ${data.images[index].imageCaption}
-                    </p>
-                `
+
+                let image = document.createElement("img");
+                image.classList.add("photo");
+                image.src = `./images/pageimages/${data.images[index].imageFilename}`;
+
+                let numberTab = document.createElement("div");
+                numberTab.classList.add("photonumber");
+                numberTab.innerText =  `${index+1} of ${data.images.length}`;
+
+                imageBlock.append(image, numberTab);
+
+                if (data.images[index].captionTitle) {
+                    let captionTitle = document.createElement("p");
+                    captionTitle.classList.add("caption", "title");
+                    captionTitle.innerText = data.images[index].captionTitle;
+                    imageBlock.append(captionTitle);
+                }
+
+                if (data.images[index].imageCaption) {
+                    let imageCaption = document.createElement("p");
+                    imageCaption.classList.add("caption");
+                    imageCaption.innerText = data.images[index].imageCaption;
+                    imageBlock.append(imageCaption);
+                }
+
                 imageGallery.appendChild(imageBlock)
     
             }

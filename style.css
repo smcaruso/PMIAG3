@@ -520,7 +520,7 @@
 }
 
 .exhibitpage .audioguide {
-  background-image: url("./images/audio.png");
+  background-image: url("/images/audio.png");
   width: 220px;
   margin-top: 50px;
   height: 50px;
@@ -672,72 +672,72 @@
 
 @font-face {
   font-family: 'agrandir';
-  src: url('./fonts/agrandir-bold-webfont.woff2') format('woff2'),
-       url('./fonts/agrandir-bold-webfont.woff') format('woff');
+  src: url('/fonts/agrandir-bold-webfont.woff2') format('woff2'),
+       url('/fonts/agrandir-bold-webfont.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'agrandir';
-  src: url('./fonts/agrandir-bolditalic-webfont.woff2') format('woff2'),
-       url('./fonts/agrandir-bolditalic-webfont.woff') format('woff');
+  src: url('/fonts/agrandir-bolditalic-webfont.woff2') format('woff2'),
+       url('/fonts/agrandir-bolditalic-webfont.woff') format('woff');
   font-weight: 600;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'agrandir';
-  src: url('./fonts/agrandir-italic-webfont.woff2') format('woff2'),
-       url('./fonts/agrandir-italic-webfont.woff') format('woff');
+  src: url('/fonts/agrandir-italic-webfont.woff2') format('woff2'),
+       url('/fonts/agrandir-italic-webfont.woff') format('woff');
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'agrandir';
-  src: url('./fonts/agrandir-light-webfont.woff2') format('woff2'),
-       url('./fonts/agrandir-light-webfont.woff') format('woff');
+  src: url('/fonts/agrandir-light-webfont.woff2') format('woff2'),
+       url('/fonts/agrandir-light-webfont.woff') format('woff');
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'agrandir';
-  src: url('./fonts/agrandir-lightitalic-webfont.woff2') format('woff2'),
-       url('./fonts/agrandir-lightitalic-webfont.woff') format('woff');
+  src: url('/fonts/agrandir-lightitalic-webfont.woff2') format('woff2'),
+       url('/fonts/agrandir-lightitalic-webfont.woff') format('woff');
   font-weight: 200;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'agrandir';
-  src: url('./fonts/agrandir-medium-webfont.woff2') format('woff2'),
-       url('./fonts/agrandir-medium-webfont.woff') format('woff');
+  src: url('/fonts/agrandir-medium-webfont.woff2') format('woff2'),
+       url('/fonts/agrandir-medium-webfont.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'agrandir';
-  src: url('./fonts/agrandir-mediumitalic-webfont.woff2') format('woff2'),
-       url('./fonts/agrandir-mediumitalic-webfont.woff') format('woff');
+  src: url('/fonts/agrandir-mediumitalic-webfont.woff2') format('woff2'),
+       url('/fonts/agrandir-mediumitalic-webfont.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'agrandir';
-  src: url('./fonts/agrandir-regular-webfont.woff2') format('woff2'),
-       url('./fonts/agrandir-regular-webfont.woff') format('woff');
+  src: url('/fonts/agrandir-regular-webfont.woff2') format('woff2'),
+       url('/fonts/agrandir-regular-webfont.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'gt_pressura_monobold';
-  src: url('./fonts/gt-pressura-mono-bold-webfont.woff2') format('woff2'),
-       url('./fonts/gt-pressura-mono-bold-webfont.woff') format('woff');
+  src: url('/fonts/gt-pressura-mono-bold-webfont.woff2') format('woff2'),
+       url('/fonts/gt-pressura-mono-bold-webfont.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 
@@ -745,8 +745,8 @@
 
 @font-face {
   font-family: 'gt_pressura_monoregular';
-  src: url('./fonts/gt-pressura-mono-regular-webfont.woff2') format('woff2'),
-       url('./fonts/gt-pressura-mono-regular-webfont.woff') format('woff');
+  src: url('/fonts/gt-pressura-mono-regular-webfont.woff2') format('woff2'),
+       url('/fonts/gt-pressura-mono-regular-webfont.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 
