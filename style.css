@@ -2,6 +2,15 @@
   font-family: 'agrandir', sans-serif;
 }
 
+canvas.webgl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    overflow: none;
+}
+
 /* INTRO SCREEN */
 
 .intro {
@@ -75,7 +84,9 @@
   display: block;
   font-size: large;
   font-weight: 600;
+  text-decoration: underline;
   margin-top: 1em;
+  cursor: pointer;
 }
 
 .intro .welcome .leftcol .welcometext span.eval a {
@@ -480,40 +491,37 @@
   height: 100%;
 }
 
-.exhibitpage .paitContent {
+.exhibitpage {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(4, 1fr);
   gap: 2em;
-  margin-top: 5em;
+  /* margin-top: 5em; */
 }
 
-/* .exhibitpage .paitContent .teamster {
-} */
-
-.exhibitpage .paitContent .teamster .photo img {
+.exhibitpage .teamster .photo img {
   width: 100%;
 }
 
-.exhibitpage .paitContent .teamster .textbox {
+.exhibitpage .teamster .textbox {
   margin-top: 2em;
 }
 
-.exhibitpage .paitContent .teamster .textbox .name {
+.exhibitpage .teamster .textbox .name {
   font-weight: 600;
   font-size: medium;
   margin-bottom: 0.5em;
 }
 
-.exhibitpage .paitContent .teamster .textbox .name span.cred {
+.exhibitpage .teamster .textbox .name span.cred {
   font-weight: 200;
 }
 
-.exhibitpage .paitContent .teamster .textbox .company {
+.exhibitpage .teamster .textbox .company {
   font-size: small;
 }
 
-.exhibitpage .paitContent .teamster .textbox .location {
+.exhibitpage .teamster .textbox .location {
   font-size: small;
   font-family: 'gt_pressura_monoregular', monospace;
   margin-top: 0.5em;

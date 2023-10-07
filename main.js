@@ -8,9 +8,12 @@ const welcomeScreen = document.querySelector(".welcome");
 if (window.location.hash) {
     let pageId = window.location.hash.substring(1);
     new Page(pageId, welcomeScreen, true);
-} else { welcomeScreen.parentElement.classList.remove("closed"); }
+} else {
+    welcomeScreen.parentElement.classList.remove("closed");
+    setupApp();
+}
 
-(function setupApp() {
+function setupApp() {
 
     const app = new PMIAwardsApp;
     
@@ -103,4 +106,4 @@ if (window.location.hash) {
     
     }
 
-})();
+}

@@ -204,6 +204,7 @@ function processTeam(list) {
         if (nodeValue.length === 0) { node.remove(); return; }
         pageContent.team.push(node.childNodes[1].value)
     });
+    console.log(list)
 }
 
 function processDescription(textbox) {
@@ -302,13 +303,22 @@ function saveDataLocally() {
 
     // reprocess complex blocks, mouseleave event may not be captured if tabbed through
 
+    updateBlockList(sidebar.links);
     processBlock(sidebar.links.list, "links");
+
+    updateBlockList(sidebar.team);
     processTeam(sidebar.team.list);
+
     processDescription(page.description.value);
+
+    updateBlockList(page.images);
     processBlock(page.images.list, "images");
+
+    updateBlockList(page.creditGrid);
     processBlock(page.creditGrid.list, "creditGrid");
-    
+
     const jsonData = JSON.stringify(pageContent);
+    console.log(jsonData)
     const blob = new Blob([jsonData], {type: "application/json"});
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");

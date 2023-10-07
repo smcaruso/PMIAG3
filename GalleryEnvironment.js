@@ -106,7 +106,7 @@ export class GalleryEnvironment {
         this.Controls = new PointClickControls(this.app);
 
         const Menu = document.querySelector(".menu");
-        Menu.classList.remove("hidden");
+        // Menu.classList.remove("hidden");
 
     }
 
@@ -136,7 +136,6 @@ export class GalleryEnvironment {
             this.Textures[ObjectKey] = TextureLoader.load(TexturePaths[ObjectKey]);
             this.Textures[ObjectKey].flipY = false;
             this.Textures[ObjectKey].magFilter = THREE.LinearFilter;
-            this.Textures[ObjectKey].encoding = THREE.sRGBEncoding;
             this.Textures[ObjectKey].colorSpace = THREE.SRGBColorSpace;
 
             this.Materials[ObjectKey]= new THREE.MeshBasicMaterial({
@@ -301,7 +300,7 @@ export class GalleryEnvironment {
         }
 
         let navTexture = this.app.Loaders.TextureLoader.load("./textures/gallery/art/subs.png");
-        navTexture.encoding = THREE.sRGBEncoding;
+        navTexture.colorSpace = THREE.SRGBColorSpace;
         const navGeometry = new THREE.PlaneGeometry(2.8, 1.57);
         const navMaterial = new THREE.MeshBasicMaterial({
             map: navTexture

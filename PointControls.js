@@ -213,7 +213,7 @@ class PointClickControls {
                 // );
                 // this.LookIndicator.lookAt(AppRef.ViewportCamera.position.x, this.Intersections[0].point.y, AppRef.ViewportCamera.position.z);
                 // document.body.style.cursor = 'none';
-                this.ClearHoverStates();
+                // this.ClearHoverStates();
                 document.body.style.cursor = 'grab';
                 break;
 
@@ -227,14 +227,14 @@ class PointClickControls {
                 );
                 this.MoveIndicator.lookAt(AppRef.ViewportCamera.position.x, this.Intersections[0].point.y, AppRef.ViewportCamera.position.z);
                 document.body.style.cursor = 'none';
-                this.ClearHoverStates();
+                // this.ClearHoverStates();
                 break;
 
             default:
                 this.MoveIndicator.visible = false;
                 this.LookIndicator.visible = false;
                 document.body.style.cursor = 'default';
-                this.ClearHoverStates();
+                // this.ClearHoverStates();
 
         }
 

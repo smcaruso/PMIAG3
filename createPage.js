@@ -5,6 +5,7 @@ export class Page {
         this.data = {};
         this.color = 0;
         this.fullPage = fullPage;
+        this.welcome = welcome;
 
         this.container = document.createElement("div");
         this.container.classList.add("exhibit-infopanel");
@@ -315,7 +316,7 @@ export class Page {
 
             nextButton.addEventListener("pointerup", e => {
                 this.container.remove();
-                const nextPage = new Page(data.nextPage);
+                const nextPage = new Page(data.nextPage, this.welcome, true);
                 nextPage.color = this.color;
             });
 
