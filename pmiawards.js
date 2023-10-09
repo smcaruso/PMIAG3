@@ -78,7 +78,6 @@ export class PMIAwardsApp {
         this.renderer.xr.enabled = true;
         this.renderer.shadowMap.type = THREE.BasicShadowMap;
         this.renderer.setClearColor("rgb(255, 255, 255)");
-        // this.renderer.outputEncoding = THREE.sRGBEncoding;
         this.renderer.outputColorSpace = THREE.SRGBColorSpace;
         this.renderer.setAnimationLoop(this.RenderLoop.bind(this));
 

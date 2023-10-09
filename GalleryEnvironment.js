@@ -76,7 +76,7 @@ export class GalleryEnvironment {
         } // end ProcessModel
 
         // this.CreateExhibitNav();
-        this.CreateSubmissionsNav();
+        // this.CreateSubmissionsNav();
 
     }
 
@@ -214,11 +214,11 @@ export class GalleryEnvironment {
 
                 let badgeTexture = this.app.Loaders.TextureLoader.load(badgeTexturePath);
                 badgeTexture.flipY = true;
-                badgeTexture.encoding = THREE.sRGBEncoding;
+                badgeTexture.colorSpace = THREE.SRGBColorSpace;
 
                 let alphaTexture = this.app.Loaders.TextureLoader.load("./textures/gallery/art/badge-alpha.png");
                 alphaTexture.flipY = true;
-                alphaTexture.encoding = THREE.sRGBEncoding;
+                alphaTexture.colorSpace = THREE.SRGBColorSpace;
 
                 let badgeMaterial = new THREE.MeshBasicMaterial({
                     map: badgeTexture,

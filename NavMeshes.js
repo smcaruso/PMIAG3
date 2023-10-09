@@ -20,36 +20,7 @@ class WallNavMesh extends THREE.Mesh {
 
     }
 
-    NavInteraction(point) {
-
-        // Click-to-look interaction deprecated for 22. Replaced by custom implementation of OrbitControls.
-
-        // RotationParameters.StartRotation.copy(this.app.ViewportCamera.quaternion);
-
-        // this.app.ViewportCamera.lookAt(point);
-        // RotationParameters.EndQuaternion.copy(this.app.ViewportCamera.quaternion);
-
-        // gsap.fromTo(RotationParameters, {SlerpFactor: 0},
-        //     {
-        //         SlerpFactor: 1,
-        //         duration: 0.5,
-        //         onUpdate: SlerpRotation.bind(this),
-        //         ease: "power1.inOut"
-        //     }    
-        // );
-        
-        // function SlerpRotation() {
-        //     RotationParameters.SlerpResultQuaternion.slerpQuaternions(
-        //         RotationParameters.StartRotation,
-        //         RotationParameters.EndQuaternion,
-        //         RotationParameters.SlerpFactor
-        //     );
-
-        //     this.app.ViewportCamera.setRotationFromQuaternion(RotationParameters.SlerpResultQuaternion);
-
-        // }
-
-    }
+    // NavInteraction(point) { }
 
 }
 
@@ -89,18 +60,18 @@ class ExhibitNavMesh extends THREE.Mesh {
 
     NavInteraction(point) {
 
-        if (this.ExhibitContent.award && !this.ExhibitContent.carousel){
-            this.CreateExhibitInfoPanel();
-        }
-        else if (this.ExhibitContent.type === "nominations") {
-            this.CreateNominationsPanel();
-        }
-        else if (this.ExhibitContent.carousel === true && this.ExhibitContent.type !== "PMI Awards") {
-            this.CreateAcademicInfoPanel();
-        }
-        else if (this.ExhibitContent.carousel === true && this.ExhibitContent.type === "PMI Awards") {
-            this.CreatePAIT();
-        }
+        // if (this.ExhibitContent.award && !this.ExhibitContent.carousel){
+        //     this.CreateExhibitInfoPanel();
+        // }
+        // else if (this.ExhibitContent.type === "nominations") {
+        //     this.CreateNominationsPanel();
+        // }
+        // else if (this.ExhibitContent.carousel === true && this.ExhibitContent.type !== "PMI Awards") {
+        //     this.CreateAcademicInfoPanel();
+        // }
+        // else if (this.ExhibitContent.carousel === true && this.ExhibitContent.type === "PMI Awards") {
+        //     this.CreatePAIT();
+        // }
 
         RotationParameters.StartRotation.copy(this.app.ViewportCamera.quaternion);
 
