@@ -379,7 +379,7 @@ export class Page {
 
             const leadImage = document.createElement("div");
             leadImage.classList.add("chapterlogo");
-            leadImage.src = `./images/${data.leadImage}`;
+            leadImage.src = `./images/pageimages/${data.leadImage}`;
 
             mainContents.append(leadImage);
 
