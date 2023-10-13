@@ -54,16 +54,21 @@ export class GalleryEnvironment {
                     case "frames":
                         newMesh = new WallNavMesh(child.geometry, frameMaterial, this.app);
                         break;
-                    case "paitIcon":
+                    case "page14":
                         newMesh = new ExhibitNavMesh(
                             child.geometry,
-                            Materials[child.name],
+                            Materials.paitIcon,
                             this.app,
-                            // PAITcarousel
+                            child.name
                             )
                         break;
                     default:
-                        newMesh = new WallNavMesh(child.geometry, Materials[child.name], this.app);
+                        if (child.name.includes("page") && child.name !== "page14") {
+                            let artMaterial = new THREE.MeshBasicMaterial();
+                            newMesh = new ExhibitNavMesh(child.geometry, Materials[child.name], this.app, child.name);
+                        } else {
+                            newMesh = new WallNavMesh(child.geometry, Materials[child.name], this.app);
+                        }
                         break;
                 }
 
@@ -105,8 +110,8 @@ export class GalleryEnvironment {
 
         this.Controls = new PointClickControls(this.app);
 
-        const Menu = document.querySelector(".menu");
-        // Menu.classList.remove("hidden");
+        const menu = document.querySelector(".menu");
+        menu.classList.remove("hidden");
 
     }
 
@@ -123,8 +128,33 @@ export class GalleryEnvironment {
             galleryTitleText: "./textures/gallery/galleryTitleText.jpg",
             paitIcon: "./textures/gallery/paitIcon.jpg",
             peopleGallery: "./textures/gallery/peopleGallery.jpg",
-            projectGallery: "./textures/gallery/projectGallery.jpg"
-
+            projectGallery: "./textures/gallery/projectGallery.jpg",
+            page1: "./images/galleryimages/1.jpg",
+            page2: "./images/galleryimages/2.jpg",
+            page3: "./images/galleryimages/3.jpg",
+            page4: "./images/galleryimages/4.jpg",
+            page5: "./images/galleryimages/5.jpg",
+            page6: "./images/galleryimages/6.jpg",
+            page7: "./images/galleryimages/7.jpg",
+            page8: "./images/galleryimages/8.jpg",
+            page9: "./images/galleryimages/9.jpg",
+            page10: "./images/galleryimages/10.jpg",
+            page11: "./images/galleryimages/11.jpg",
+            page12: "./images/galleryimages/12.jpg",
+            page13: "./images/galleryimages/13.jpg",
+            page14: "./images/galleryimages/14.jpg",
+            page16: "./images/galleryimages/16.jpg",
+            page17: "./images/galleryimages/17.jpg",
+            page18: "./images/galleryimages/18.jpg",
+            page19: "./images/galleryimages/19.jpg",
+            page20: "./images/galleryimages/20.jpg",
+            page21: "./images/galleryimages/21.jpg",
+            page22: "./images/galleryimages/22.jpg",
+            page23: "./images/galleryimages/23.jpg",
+            page24: "./images/galleryimages/24.jpg",
+            page25: "./images/galleryimages/25.jpg",
+            page26: "./images/galleryimages/26.jpg",
+            page27: "./images/galleryimages/27.jpg"
         }
 
         this.Textures = {};
@@ -141,19 +171,22 @@ export class GalleryEnvironment {
             this.Materials[ObjectKey]= new THREE.MeshBasicMaterial({
                 map: this.Textures[ObjectKey],
                 envMap: this.interiorCubeMap,
-                reflectivity: 0.005,
-                combine: THREE.AddOperation
+                reflectivity: 0.002,
+                combine: THREE.MixOperation
             });
 
             if (ObjectKey === "galleryTitleText") {
                 this.Materials[ObjectKey].reflectivity = 0.25;
                 this.Materials[ObjectKey].combine = THREE.MixOperation;
+                this.Materials[ObjectKey].blending = THREE.AdditiveBlending;
             }
         }
 
         return this.Materials;
 
     }
+
+    // following functions are deprecated:
 
     CreateExhibitNav() {
 

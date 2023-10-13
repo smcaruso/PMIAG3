@@ -1,5 +1,6 @@
 import * as THREE from "three";
-import {gsap} from "gsap/all";
+import { gsap } from "gsap/all";
+import { Page } from "./createPage.js";
 // import ChapterTextMarkup from "./ChapterTextMarkup.js";
 
 const RotationParameters = {
@@ -20,7 +21,7 @@ class WallNavMesh extends THREE.Mesh {
 
     }
 
-    // NavInteraction(point) { }
+    NavInteraction(point) { }
 
 }
 
@@ -50,28 +51,17 @@ class FloorNavMesh extends THREE.Mesh {
 
 class ExhibitNavMesh extends THREE.Mesh {
 
-    constructor(geometry, material, app, special) {
+    constructor(geometry, material, app, meshName) {
 
         super(geometry, material);
         this.app = app;
-        this.ExhibitContent = special;
+        this.index = meshName.slice(4);
 
     }
 
     NavInteraction(point) {
 
-        // if (this.ExhibitContent.award && !this.ExhibitContent.carousel){
-        //     this.CreateExhibitInfoPanel();
-        // }
-        // else if (this.ExhibitContent.type === "nominations") {
-        //     this.CreateNominationsPanel();
-        // }
-        // else if (this.ExhibitContent.carousel === true && this.ExhibitContent.type !== "PMI Awards") {
-        //     this.CreateAcademicInfoPanel();
-        // }
-        // else if (this.ExhibitContent.carousel === true && this.ExhibitContent.type === "PMI Awards") {
-        //     this.CreatePAIT();
-        // }
+        let newPage = new Page(this.index, document.querySelector(".welcome"));
 
         RotationParameters.StartRotation.copy(this.app.ViewportCamera.quaternion);
 

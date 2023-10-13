@@ -499,12 +499,23 @@ canvas.webgl {
   /* margin-top: 5em; */
 }
 
-.exhibitpage .teamster .photo img {
-  width: 100%;
+.exhibitpage .rightcolumn .credit-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.exhibitpage .rightcolumn .credit-area .teamster::before {
+}
+
+.exhibitpage .teamster img.photo {
+    width: 100%;
 }
 
 .exhibitpage .teamster .textbox {
-  margin-top: 2em;
+  margin-top: 0.5em;
 }
 
 .exhibitpage .teamster .textbox .name {
@@ -675,6 +686,161 @@ canvas.webgl {
   font-size: smaller;
 }
 
+.menu {
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    width: 100px; 
+    background-color: #ecececb4;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    opacity: 1;
+    transition: height 0.35s ease-in-out 0s, opacity 1.5s;
+    padding: 0;
+}
+
+.menu.hidden {
+    opacity: 0;
+    z-index: 0;
+}
+
+.menu .navicons img {
+    visibility: hidden;
+}
+
+.menu .navicons .navtitle {
+    visibility: hidden;
+}
+
+.menu.open {
+    height: 100%;
+    transition: height 0.25s ease-in-out 0s;
+}
+
+.menu.open .navicons {
+    display: flex;
+    flex-direction: column;
+    visibility: visible;
+    height: calc(100% - 137px);
+    max-height: 700px;
+}
+
+.menu.open .navicons .icon {
+    min-height: 60px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu.open .navicons .icon img {
+    display: block;
+    visibility: visible;
+}
+
+.menu.open .navicons .icon .navtitle {
+    display: block;
+    position: absolute;
+    overflow: visible;
+    left: 120px;
+    width: 50dvw;
+    font-size: larger;
+    line-height: 2em;
+    font-family: 'agrandirbold', sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px #2c2c2c;
+}
+
+.menu.open .navicons .icon:hover .navtitle {
+    visibility: visible;
+}
+
+.menu:hover {
+    cursor: pointer;
+    background-color: #ecececff;
+}
+
+.menu.open:hover {
+    cursor: default;
+    background-color: #ecececb4;
+}
+
+.menu.open .navicons .icon:hover {
+    cursor: pointer;
+    background-color: #ecececff;
+}
+
+.menu img.menuicon {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 37px;
+}
+
+.menu img.menuicon:hover {
+    cursor: pointer;
+    background-color: #ecececff;
+}
+
+.titlehover {
+    z-index: 5;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    top: 25px;
+    left: 0;
+    margin: 0;
+    height: 100px;
+    max-width: 75%;
+    line-height: 1.1;
+    background-color: #ecececb4;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    min-width: 200px;
+    opacity: 1;
+    transition: opacity 0.25s;
+}
+
+.titlehover.hidden {
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.titlehover img {
+    display: block;
+    padding: 25px;
+}
+
+.titlehover img.people {
+    background-color: rgba(79, 23, 168, 0.5);
+}
+
+.titlehover img.project {
+    background-color: rgba(5, 191, 224, 0.5);
+}
+
+.titlehover img.academic {
+    background-color: rgba(255, 99, 15, 0.5);
+}
+
+.titlehover .exhibitname {
+    font-size: larger;
+    padding-left: 25px;
+    padding-right: 25px;
+    transform: translateY(2px);
+}
+.titlehover .exhibitname .status {
+    font-family: 'agrandir';
+    font-weight: 200;
+    font-size: x-large;
+    display: block;
+}
 
 /* FONT SETUP */
 

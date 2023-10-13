@@ -23,7 +23,7 @@ export class Page {
                 console.log("Creating exhibit page for", this.data);
                 this.setColor(data.id);
                 this.buildPage(this.data);
-                welcome.parentElement.remove();
+                if (welcome) { welcome.parentElement.remove(); }
             } else {
 
                 // replace the welcome page if there is no page to create
@@ -51,9 +51,9 @@ export class Page {
 
     setColor(id) {
         if (this.color !== 0) return;
-        if (id >= 0 && id < 11) { this.color = "purple"; }
-        else if (id >= 11 && id < 18) { this.color = "blue"; }
-        else if (id > 18) {this.color = "orange"; }
+        if (id >= 0 && id < 11) { this.color = "blue"; }
+        else if (id >= 11 && id < 18) { this.color = "purple"; }
+        else if (id >= 18) {this.color = "orange"; }
     }
 
     buildPage(data) {
@@ -445,7 +445,7 @@ export class Page {
         if (data.creditGrid.length > 0) {
 
             const creditGrid = document.createElement("div");
-            creditGrid.classList.add("maintext");
+            creditGrid.classList.add("credit-area");
 
             data.creditGrid.forEach(credit => {
 
@@ -455,7 +455,7 @@ export class Page {
                 if (credit.creditImageFilename) {
                     const creditImage = document.createElement("img");
                     creditImage.classList.add("photo");
-                    creditImage.src = credit.creditImageFilename;
+                    creditImage.src = `/images/pageimages/${credit.creditImageFilename}`;
                     creditBlock.append(creditImage);
                 }
 

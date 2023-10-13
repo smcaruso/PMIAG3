@@ -213,7 +213,7 @@ class PointClickControls {
                 // );
                 // this.LookIndicator.lookAt(AppRef.ViewportCamera.position.x, this.Intersections[0].point.y, AppRef.ViewportCamera.position.z);
                 // document.body.style.cursor = 'none';
-                // this.ClearHoverStates();
+                this.ClearHoverStates();
                 document.body.style.cursor = 'grab';
                 break;
 
@@ -227,14 +227,14 @@ class PointClickControls {
                 );
                 this.MoveIndicator.lookAt(AppRef.ViewportCamera.position.x, this.Intersections[0].point.y, AppRef.ViewportCamera.position.z);
                 document.body.style.cursor = 'none';
-                // this.ClearHoverStates();
+                this.ClearHoverStates();
                 break;
 
             default:
                 this.MoveIndicator.visible = false;
                 this.LookIndicator.visible = false;
                 document.body.style.cursor = 'default';
-                // this.ClearHoverStates();
+                this.ClearHoverStates();
 
         }
 
@@ -333,80 +333,118 @@ class PointClickControls {
             duration: 0.25
         });
 
-        switch (NavMesh.ExhibitContent.award) {
+        let status = "";
+        let title = "";
 
-            case "PMI Project of the Year Award":
+        switch (NavMesh.index) {
+
+            case "1":
+                title = "About the PMI Awards";
                 TooltipIcon.src = "./images/glyph01w.png";
                 TooltipIcon.classList.add("project");
                 FillToolText();
                 break;
 
-            case "PMO of the Year Award":
-                TooltipIcon.src = "./images/glyph02w.png";
-                TooltipIcon.classList.add("project");
-                FillToolText();
-                break;
-
-            // case "PMI Project Excellence Award":
-            //     TooltipIcon.src = "./images/glyph03w.png";
-            //     TooltipIcon.classList.add("project");
-            //     FillToolText();
-            //     break;
-
-            case "PMI Eric Jenett Project Management Excellence Award":
+            case "2":
+            case "3":
+            case "4":
+            case "5":
+            case "6":
+            case "7":
+                status = "Finalist";
+                title = "PMI Project of the Year Award";
                 TooltipIcon.src = "./images/glyph04w.png";
                 TooltipIcon.classList.add("project");
                 FillToolText();
                 break;
 
-            case "PMI Rising Leader Award":
-                TooltipIcon.src = "./images/glyph03w.png";
+            case "8":
+            case "9":
+            case "10":
+                status = "Finalist";
+                title = "PMO of the Year Award";
+                TooltipIcon.src = "./images/glyph02w.png";
                 TooltipIcon.classList.add("project");
                 FillToolText();
                 break;
 
-            case "PMI Fellow Award":
+            case "11":
+            case "12":
+            case "13":
+                status = "Recipient";
+                title = "PMI Fellow Award";
                 TooltipIcon.src = "./images/glyph06w.png";
-                TooltipIcon.classList.add("project");
+                TooltipIcon.classList.add("people");
                 FillToolText();
                 break;
             
-            case "Young Researcher Award":
-            case "PMI David I. Cleland Project Management Literature Award":
-            case "PMI Linn Stuckenbruck Teaching Excellence Award":
-            case "PMI Research Achievement Award":
-                TooltipIcon.src = "./images/glyph07w.png";
-                TooltipIcon.classList.add("academic");
-                TooltipTitle.innerHTML = `
-                    <span class="status">${NavMesh.ExhibitContent.award}</span>`;
+            case "14":
+                    title = "Meet the 2023 Evaluators";
+                    TooltipIcon.classList.add("people");
+                    FillToolText();
+                    break;
+
+            case "15":
+                status = "Winner";
+                title = "PMI Eric Jenett Project Management Excellence Award";
+                TooltipIcon.src = "./images/glyph04w.png";
+                TooltipIcon.classList.add("people");
+                FillToolText();
                 break;
 
-            case "Category I: 25-300 Members":
-            case "Category II: 301-1500 Members":
-            case "Category III: 1501 or More Members":
+            case "16":
+            case "17":
+                status = "Finalist";
+                title = "PMI Rising Leader Award";
+                TooltipIcon.src = "./images/glyph03w.png";
+                TooltipIcon.classList.add("people");
+                FillToolText();
+                break;
+            
+            case "18":
+                title = "Chapter Leadership Impact Award";
                 TooltipIcon.src = "./images/glyph05w.png";
-                TooltipIcon.classList.add("indy");
-                TooltipTitle.innerHTML = `
-                    <span class="status">${NavMesh.ExhibitContent.award}</span>`;
+                TooltipIcon.classList.add("academic");
+                FillToolText();
+                break;
+            
+            case "19":
+            case "20":
+            case "21":
+                title = "Chapter Awards";
+                TooltipIcon.src = "./images/glyph05w.png";
+                TooltipIcon.classList.add("academic");
+                FillToolText();
+                break;
+            
+            case "22":
+                title = "Kerzner Award";
+                TooltipIcon.src = "./images/glyph06w.png";
+                TooltipIcon.classList.add("academic");
+                FillToolText();
                 break;
 
-            case "Meet the 2022 Evaluators":
-                TooltipIcon.src = "./images/glyph01w.png";
-                TooltipIcon.classList.add("indy");
-                TooltipTitle.innerHTML = `
-                    <span class="status">${NavMesh.ExhibitContent.title}</span>`;
+            case "23":
+            case "24":
+            case "25":
+            case "26":
+            case "27":
+                title = "Research & Academic Awards";
+                TooltipIcon.src = "./images/glyph06w.png";
+                TooltipIcon.classList.add("academic");
+                FillToolText();
                 break;
 
             default:
                 TooltipIcon.src = "./images/glyph07.png";
-                TooltipTitle.innerText = "Call for 2023 Nominations";
+                TooltipTitle.innerText = "2023 PMI Awards";
                 break;
 
         }
 
         function FillToolText() {
             TooltipTitle.innerHTML = `
-            <span class="status">${NavMesh.ExhibitContent.status}</span>${NavMesh.ExhibitContent.title}
+            <span class="status">${status}</span>${title}
             `;
         }
 

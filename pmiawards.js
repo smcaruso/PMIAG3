@@ -16,7 +16,7 @@ export class PMIAwardsApp {
         this.LoadingProgress = 0;
         const LoadingBarElement = document.querySelector(".loadingbar");
         const LoadingText = document.querySelector(".loadingtext");
-        this.MenuBar = document.querySelector(".menu");
+        this.menuBar = document.querySelector(".menu");
 
         this.clock = new THREE.Clock();
         this.CameraHeight = 1.25;
@@ -172,16 +172,29 @@ export class PMIAwardsApp {
 
                 break;
 
+            case "about":
+
+                this.scene.fog.color.set(0x4F17A8);
+
+                NewLocation.x = 2.75;
+                NewLocation.z = -7.25;
+
+                NewLookDirection.x = 5.4;
+                NewLookDirection.y = 1.25;
+                NewLookDirection.z = -7.250;
+
+                break;
+
             case "poty":
 
                 this.scene.fog.color.set(0x4F17A8);
 
                 NewLocation.x = -0.74;
-                NewLocation.z = -7.25;
+                NewLocation.z = -5.25;
 
                 NewLookDirection.x = 5.4;
-                NewLookDirection.y = 0.94;
-                NewLookDirection.z = 2.4;
+                NewLookDirection.y = 1.4;
+                NewLookDirection.z = 5.43;
 
                 break;
             
@@ -205,22 +218,9 @@ export class PMIAwardsApp {
                 NewLocation.x = -12.6;
                 NewLocation.z = -17.1;
 
-                NewLookDirection.x = -15.5;
-                NewLookDirection.y = 1.2;
-                NewLookDirection.z = -17.1;
-
-                break;
-
-            case "jenett":
-
-                this.scene.fog.color.set(0x405BFE0);
-
-                NewLocation.x = -11.3;
-                NewLocation.z = -22.78;
-
-                NewLookDirection.x = -15.5;
-                NewLookDirection.y = 1.1;
-                NewLookDirection.z = -23;
+                NewLookDirection.x = -15.56;
+                NewLookDirection.y = 1.32;
+                NewLookDirection.z = -18.48;
 
                 break;
 
@@ -245,8 +245,8 @@ export class PMIAwardsApp {
                 NewLocation.z = 7.3;
 
                 NewLookDirection.x = -7.6;
-                NewLookDirection.y = 1.0;
-                NewLookDirection.z = 10.1;
+                NewLookDirection.y = 1.14;
+                NewLookDirection.z = 9.24;
 
                 break;
 
@@ -273,8 +273,8 @@ export class PMIAwardsApp {
             onComplete: PlaceCamera.bind(this)
         });
         
-        this.MenuBar.classList.remove("open");
-        this.MenuBar.children[0].src = "./images/menu.png";
+        this.menuBar.classList.remove("open");
+        this.menuBar.children[0].src = "./images/menu.png";
 
         function PlaceCamera() {
 

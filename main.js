@@ -19,15 +19,15 @@ function setupApp() {
     
     // Catalog Menu:
     
-    const Menu = document.querySelector(".menu");
-    const MenuIcon = document.querySelector(".menuicon");
+    const menu = document.querySelector(".menu");
+    const menuIcon = document.querySelector(".menuicon");
     const LoadingBarElement = document.querySelector(".loadingbar");
     const loadingBarAndButton = document.querySelector(".loadingstuff")
     
     let POTYbutton = document.getElementById("01");
     let PMObutton = document.getElementById("02");
     let PFbutton = document.getElementById("03");
-    let EJbutton = document.getElementById("04");
+    let AboutButton = document.getElementById("04");
     let RLbutton = document.getElementById("05");
     let RAbutton = document.getElementById("06");
     let CAbutton = document.getElementById("07");
@@ -37,27 +37,27 @@ function setupApp() {
     RotateTips();
     let RotationInterval = setInterval(RotateTips, 5250);
 
-    // POTYbutton.addEventListener("pointerup", function() { app.Teleport("poty"); });
-    // PMObutton.addEventListener("pointerup", function() { app.Teleport("pmo"); });
-    // PFbutton.addEventListener("pointerup", function() { app.Teleport("fellow"); });
-    // EJbutton.addEventListener("pointerup", function() { app.Teleport("jenett"); });
-    // RLbutton.addEventListener("pointerup", function() { app.Teleport("rising"); });
-    // RAbutton.addEventListener("pointerup", function() { app.Teleport("academic"); });
-    // CAbutton.addEventListener("pointerup", function() { app.Teleport("chapter"); });
+    POTYbutton.addEventListener("pointerup", function() { app.Teleport("poty"); });
+    PMObutton.addEventListener("pointerup", function() { app.Teleport("pmo"); });
+    PFbutton.addEventListener("pointerup", function() { app.Teleport("fellow"); });
+    AboutButton.addEventListener("pointerup", function() { app.Teleport("about"); });
+    RLbutton.addEventListener("pointerup", function() { app.Teleport("rising"); });
+    RAbutton.addEventListener("pointerup", function() { app.Teleport("academic"); });
+    CAbutton.addEventListener("pointerup", function() { app.Teleport("chapter"); });
 
-    // MenuIcon.addEventListener("pointerup",
-    //     function(event) {
-    //         event.stopPropagation();
-    //         if (Menu.classList.contains("open")) {
-    //             Menu.classList.remove("open");
-    //             MenuIcon.src = "./images/menu.png";
-    //         }
-    //         else {
-    //             Menu.classList.add("open");
-    //             MenuIcon.src = "./images/close.png";
-    //         }
-    //     }
-    // );
+    menuIcon.addEventListener("pointerup",
+        function(event) {
+            event.stopPropagation();
+            if (menu.classList.contains("open")) {
+                menu.classList.remove("open");
+                menuIcon.src = "./images/menu.png";
+            }
+            else {
+                menu.classList.add("open");
+                menuIcon.src = "./images/close.png";
+            }
+        }
+    );
     
     // Intro panel destruction:
     
