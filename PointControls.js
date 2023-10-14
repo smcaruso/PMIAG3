@@ -119,6 +119,8 @@ class PointClickControls {
 
         // Pinch detection:
 
+        console.log(event)
+
         for (let index = 0; index < PinchEventCache.length; index++) {
             if (event.pointerId == PinchEventCache[index].pointerId) {
                 PinchEventCache[index] = event;
