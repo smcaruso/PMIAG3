@@ -119,8 +119,6 @@ class PointClickControls {
 
         // Pinch detection:
 
-        console.log(event)
-
         for (let index = 0; index < PinchEventCache.length; index++) {
             if (event.pointerId == PinchEventCache[index].pointerId) {
                 PinchEventCache[index] = event;
@@ -189,6 +187,7 @@ class PointClickControls {
         this.Intersections.length = 0;
         this.PCRaycaster.intersectObject(AppRef.NavGroup, true, this.Intersections);
 
+        console.log(this.Intersections)
         if (this.Intersections.length === 0) {
             this.MoveIndicator.visible = false;
             this.LookIndicator.visible = false;
