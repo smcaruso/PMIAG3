@@ -241,7 +241,7 @@ canvas.webgl {
 /* EXHIBIT PAGE STYLES */
 
 .exhibit-infopanel {
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -688,7 +688,7 @@ canvas.webgl {
 
 .menu {
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     bottom: 0;
     left: 0;
     height: 100px;

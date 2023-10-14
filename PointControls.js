@@ -187,7 +187,6 @@ class PointClickControls {
         this.Intersections.length = 0;
         this.PCRaycaster.intersectObject(AppRef.NavGroup, true, this.Intersections);
 
-        console.log(this.Intersections)
         if (this.Intersections.length === 0) {
             this.MoveIndicator.visible = false;
             this.LookIndicator.visible = false;
@@ -205,15 +204,6 @@ class PointClickControls {
                 break;
             
             case "WallNavMesh":
-                // this.LookIndicator.visible = true;
-                // this.MoveIndicator.visible = false;
-                // this.LookIndicator.position.set(
-                //     this.Intersections[0].point.x,
-                //     this.Intersections[0].point.y,
-                //     this.Intersections[0].point.z
-                // );
-                // this.LookIndicator.lookAt(AppRef.ViewportCamera.position.x, this.Intersections[0].point.y, AppRef.ViewportCamera.position.z);
-                // document.body.style.cursor = 'none';
                 this.ClearHoverStates();
                 document.body.style.cursor = 'grab';
                 break;

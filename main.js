@@ -13,6 +13,11 @@ if (window.location.hash) {
     setupApp();
 }
 
+const meetEvalLink = document.querySelector(".eval");
+meetEvalLink.addEventListener("pointerup", e => {
+    let evalPage = new Page(14, null);
+});
+
 function setupApp() {
 
     const app = new PMIAwardsApp;

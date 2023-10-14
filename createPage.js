@@ -20,7 +20,7 @@ export class Page {
         .then(data => {
             if (data) {
                 this.data = data;
-                console.log("Creating exhibit page for", this.data);
+                // console.log("Creating exhibit page for", this.data);
                 this.setColor(data.id);
                 this.buildPage(this.data);
                 if (welcome) { welcome.parentElement.remove(); }
@@ -30,6 +30,7 @@ export class Page {
 
                 welcome.classList.remove("closed");
                 welcome.parentElement.classList.remove("closed");
+                
             }
         });
 
@@ -107,13 +108,15 @@ export class Page {
 
         this.titlebar.append(category, title, openCloseButton);
         this.titlebar.addEventListener("pointerup", scrollToTop.bind(this));
+        this.container.addEventListener("scroll", scrollDown.bind(this));
+
+        setTimeout( () => { scrollToTop.call(this); }, 25);
 
         return this.titlebar;
 
         function scrollToTop(event) {
-
             let top = window.innerHeight;
-
+            
             if (this.fullPage) {
                 top = 100;
                 if (window.innerWidth < 420) {
@@ -126,7 +129,8 @@ export class Page {
                 behavior: "smooth"
             });
 
-            if (this.fullPage) return;
+            let isHash = window.location.hash.length > 0;
+            if (this.fullPage && !this.data.nextPage || isHash) return;
 
             openCloseButton.removeEventListener("pointerup", scrollToTop);
             openCloseButton.querySelector("span").innerText = "Close";
@@ -143,6 +147,37 @@ export class Page {
             this.container.remove();
             
         }
+
+        function scrollDown(event) {
+
+            if (this.fullPage) return;
+
+            let ScrollProgress = this.container.scrollTop / window.innerHeight;
+
+            if (window.innerWidth > 420) {
+                if (ScrollProgress >= 1) {
+                    this.pageBody.style.opacity = 1;
+                    category.style.paddingLeft = "100px";
+                } else {
+                    this.pageBody.style.opacity = ScrollProgress;
+                    category.style.paddingLeft = `${150 - (50 * ScrollProgress)}px`;
+                }
+            }
+
+            if (this.container.scrollTop >= window.innerHeight) {
+                openCloseButton.removeEventListener("pointerup", scrollToTop.bind(this));
+                openCloseButton.querySelector("span").innerText = "Close";
+                openCloseButton.querySelector("img").src = "./images/close.png";
+                openCloseButton.addEventListener("pointerup", exit.bind(this));
+            } else if (this.container.scrollTop < window.innerHeight) {
+                openCloseButton.removeEventListener("pointerup", exit.bind(this));
+                openCloseButton.querySelector("span").innerText = "Scroll";
+                openCloseButton.querySelector("img").src = "./images/open.png"
+                openCloseButton.addEventListener("pointerup", scrollToTop.bind(this));
+            }
+        }
+
+        
 
     }
 
@@ -315,7 +350,7 @@ export class Page {
             nextButton.innerHTML = `Next Page <img src="./images/leftarrow.png">`;
 
             nextButton.addEventListener("pointerup", e => {
-                this.container.remove();
+                setTimeout( () => { this.container.remove(); }, 25);
                 const nextPage = new Page(data.nextPage, this.welcome, true);
                 nextPage.color = this.color;
             });
