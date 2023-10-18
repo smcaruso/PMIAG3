@@ -411,11 +411,11 @@ export class Page {
         }
 
         if (data.leadImage) {
-
             const leadImage = document.createElement("div");
             leadImage.classList.add("chapterlogo");
-            leadImage.src = `./images/pageimages/${data.leadImage}`;
-
+            leadImage.innerHTML = `<img src="./images/pageimages/${data.leadImage}">`;
+            
+            console.log(leadImage)
             mainContents.append(leadImage);
 
         }

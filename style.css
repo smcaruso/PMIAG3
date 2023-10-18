@@ -480,13 +480,13 @@ canvas.webgl {
   list-style: square;
 }
 
-.exhibitpage .maintext .chapterlogo {
-  background-color: #ffffff;
+.exhibitpage .chapterlogo {
+  /* background-color: #ffffff; */
   width: 75%;
   margin: 2em 0 2em 0;
 }
 
-.exhibitpage .maintext .chapterlogo img {
+.exhibitpage .chapterlogo img {
   width: 100%;
   height: 100%;
 }
