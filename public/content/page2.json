@@ -1,1 +1,58 @@
-{"id":"2","awardCategory":"Project Awards","titleBarTitle":"PMI Project of the Year Award","awardStatus":"Finalist","sidebarTitle":"PMI Project of the Year Award","sidebarCategory":null,"aboutText":"The PMI Project of the Year Award, PMI Large and Mega Project Award, and PMI Small and Mid-Size Project Award recognize complex projects that best deliver superior performance of project management practices, expert organizational results, and positive impacts on society.","links":[{"linkUrl":"https://www.caterpillar.com/","linkLabel":"Website"},{"linkUrl":"https://www.linkedin.com/company/caterpillar-inc/","linkLabel":"LinkedIn"},{"linkUrl":"https://www.facebook.com/caterpillarinc","linkLabel":"Facebook"},{"linkUrl":"https://www.instagram.com/caterpillarinc/","linkLabel":"Instagram"}],"team":[],"audioGuide":true,"nextPage":null,"dupeStatus":true,"pageTitle":"Caterpillar Prototype Battery Electric Mining Truck","subtitle":"Caterpillar Inc.","leadVideo":null,"leadImage":null,"description":["In May 2021, Caterpillar Inc. began a project to develop a battery electric 793 Large Mining Truck. A typical 793 Large Mining Truck can haul 255 tons (US) and weighs over 851,000 lbs. Using battery electric technology to move this size truck with payload is a first for Caterpillar. Many of their customers have bold emissions reduction goals and Caterpillar is committed to enabling and supporting our customers’ goals. A battery enabled machine does not run on a diesel engine, hence there are no exhaust emissions which is a significant step in supporting our customers’ sustainable mining journeys.","The team successfully demonstrated the completed prototype battery electric 793 Large Mining Truck at the Tucson Proving Ground facility on November 14, 2022 and received wide publicity. Several customers came together to witness the live demonstration of the prototype truck’s capabilities on a seven-kilometer (4.3-mile) course."],"images":[{"imageFilename":"ex2_img1_truck.jpg","imageCaption":"Caterpillar Prototype 793 Battery Electric Mining Truck."},{"imageFilename":"ex2_img2_closeup.jpg","imageCaption":"793 decal closeup on the Caterpillar Prototype 793 Battery Electric Mining Truck."},{"imageFilename":"ex2_img3_group.jpg","imageCaption":"Group Photo at the Tucson Proving Ground facility demonstration."},{"imageFilename":"ex2_img4_attendees.jpg","imageCaption":"Demonstration Attendees next to the Caterpillar Prototype 793 Battery Electric Mining Truck."}],"creditGrid":[]}
+{
+    "id": "2",
+    "awardCategory": "Project Awards",
+    "titleBarTitle": "PMI Project of the Year Award",
+    "awardStatus": "Finalist",
+    "sidebarTitle": "PMI Project of the Year Award",
+    "sidebarCategory": null,
+    "aboutText": "The PMI Project of the Year Award, PMI Large and Mega Project Award, and PMI Small and Mid-Size Project Award recognize complex projects that best deliver superior performance of project management practices, expert organizational results, and positive impacts on society.",
+    "links": [
+        {
+            "linkUrl": "https://www.caterpillar.com/",
+            "linkLabel": "Website"
+        },
+        {
+            "linkUrl": "https://www.linkedin.com/company/caterpillar-inc/",
+            "linkLabel": "LinkedIn"
+        },
+        {
+            "linkUrl": "https://www.facebook.com/caterpillarinc",
+            "linkLabel": "Facebook"
+        },
+        {
+            "linkUrl": "https://www.instagram.com/caterpillarinc/",
+            "linkLabel": "Instagram"
+        }
+    ],
+    "team": [],
+    "audioGuide": true,
+    "nextPage": null,
+    "dupeStatus": true,
+    "pageTitle": "Caterpillar Prototype Battery Electric Mining Truck",
+    "subtitle": "Caterpillar Inc.",
+    "leadVideo": null,
+    "leadImage": null,
+    "description": [
+        "In May 2021, Caterpillar Inc. began a project to develop a battery electric 793 Large Mining Truck. A typical 793 Large Mining Truck can haul 255 tons (US) and weighs over 851,000 lbs. Using battery electric technology to move this size truck with payload is a first for Caterpillar. Many of their customers have bold emissions reduction goals and Caterpillar is committed to enabling and supporting them. A battery enabled machine does not run on a diesel engine, hence there are no exhaust emissions, which is a significant step in supporting customers’ sustainable mining journeys.",
+        "The team successfully demonstrated the completed prototype battery electric 793 Large Mining Truck at the Tucson Proving Ground facility on November 14, 2022 and received wide publicity. Several customers came together to witness the live demonstration of the prototype truck’s capabilities on a seven-kilometer (4.3-mile) course."
+    ],
+    "images": [
+        {
+            "imageFilename": "ex2_img1_truck.jpg",
+            "imageCaption": "Caterpillar Prototype 793 Battery Electric Mining Truck."
+        },
+        {
+            "imageFilename": "ex2_img2_closeup.jpg",
+            "imageCaption": "793 decal closeup on the Caterpillar Prototype 793 Battery Electric Mining Truck."
+        },
+        {
+            "imageFilename": "ex2_img3_group.jpg",
+            "imageCaption": "Group Photo at the Tucson Proving Ground facility demonstration."
+        },
+        {
+            "imageFilename": "ex2_img4_attendees.jpg",
+            "imageCaption": "Demonstration Attendees next to the Caterpillar Prototype 793 Battery Electric Mining Truck."
+        }
+    ],
+    "creditGrid": []
+}
