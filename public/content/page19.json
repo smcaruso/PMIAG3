@@ -1,1 +1,59 @@
-{"id":"19","awardCategory":"Chapter Awards","titleBarTitle":"Category III: 1501 or More Members","awardStatus":"Finalists","sidebarTitle":"Chapter of the Year Award","sidebarCategory":"Category III: 1501 or More Members","aboutText":"The PMI Chapter Awards program provides recognition of volunteer efforts, motivates chapter leaders, and acknowledges their contributions toward achieving PMI's goals.","links":[{"linkUrl":"https://pmiphx.org/","linkLabel":"PMI Phoenix Chapter"},{"linkUrl":"https://pmisp.org.br/","linkLabel":"PMI São Paulo, Brazil Chapter"},{"linkUrl":"https://www.pmi.org/chapters/northern-italy","linkLabel":"PMI Northern Italy Chapter"},{"linkUrl":"https://www.pmimumbaichapter.org/","linkLabel":"PMI Mumbai Chapter"}],"team":[],"audioGuide":true,"nextPage":"","dupeStatus":true,"pageTitle":"","subtitle":"","leadVideo":"","leadImage":"","description":[],"images":[{"imageFilename":"ex19_img1_sao-paulo.jpg","captionTitle":"Finalist: PMI São Paulo, Brazil Chapter | Latin America Region","imageCaption":"Pictured above: The Board of PMI São Paulo, Brazil Chapter - 228 Happy Hour - Celebrating 25 years of the Chapter of São Paulo."},{"imageFilename":"ex19_img2_northern-italy.jpg","captionTitle":"Finalist: PMI Northern Italy Chapter | Europe Region","imageCaption":"With a motto of \"Passion & Professionalism,\" PMI Northern Italy Chapter aims higher—literally!"},{"imageFilename":"ex19_img3_mumbai.jpg","captionTitle":"Finalist: PMI Mumbai Chapter | South Asia Region","imageCaption":"Pictured above: PMI Mumbai Chapter AGM 2023."},{"imageFilename":"ex19_hero_phoenix.jpg","captionTitle":"Finalist: PMI Phoenix Chapter | North America Region","imageCaption":"Pictured above: By the end of 2022, the Phoenix Chapter had three on-site and two virtual social good campaigns. "}],"creditGrid":[]}
+{
+    "id": "19",
+    "awardCategory": "Chapter Awards",
+    "titleBarTitle": "Category III: 1501 or More Members",
+    "awardStatus": "Finalists",
+    "sidebarTitle": "Chapter of the Year Award",
+    "sidebarCategory": "Category III: 1501 or More Members",
+    "aboutText": "The PMI Chapter Awards program provides recognition of volunteer efforts, motivates chapter leaders, and acknowledges their contributions toward achieving PMI's goals.",
+    "links": [
+        {
+            "linkUrl": "https://pmiphx.org/",
+            "linkLabel": "PMI Phoenix Chapter"
+        },
+        {
+            "linkUrl": "https://pmisp.org.br/",
+            "linkLabel": "PMI São Paulo, Brazil Chapter"
+        },
+        {
+            "linkUrl": "https://www.pmi.org/chapters/northern-italy",
+            "linkLabel": "PMI Northern Italy Chapter"
+        },
+        {
+            "linkUrl": "https://www.pmimumbaichapter.org/",
+            "linkLabel": "PMI Mumbai Chapter"
+        }
+    ],
+    "team": [],
+    "audioGuide": false,
+    "nextPage": "",
+    "dupeStatus": true,
+    "pageTitle": "",
+    "subtitle": "",
+    "leadVideo": "",
+    "leadImage": "",
+    "description": [],
+    "images": [
+        {
+            "imageFilename": "ex19_img1_sao-paulo.jpg",
+            "captionTitle": "Finalist: PMI São Paulo, Brazil Chapter | Latin America Region",
+            "imageCaption": "Pictured above: The Board of PMI São Paulo, Brazil Chapter - 228 Happy Hour - Celebrating 25 years of the Chapter of São Paulo."
+        },
+        {
+            "imageFilename": "ex19_img2_northern-italy.jpg",
+            "captionTitle": "Finalist: PMI Northern Italy Chapter | Europe Region",
+            "imageCaption": "With a motto of \"Passion & Professionalism,\" PMI Northern Italy Chapter aims higher—literally!"
+        },
+        {
+            "imageFilename": "ex19_img3_mumbai.jpg",
+            "captionTitle": "Finalist: PMI Mumbai Chapter | South Asia Region",
+            "imageCaption": "Pictured above: PMI Mumbai Chapter AGM 2023."
+        },
+        {
+            "imageFilename": "ex19_hero_phoenix.jpg",
+            "captionTitle": "Finalist: PMI Phoenix Chapter | North America Region",
+            "imageCaption": "Pictured above: By the end of 2022, the Phoenix Chapter had three on-site and two virtual social good campaigns. "
+        }
+    ],
+    "creditGrid": []
+}
