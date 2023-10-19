@@ -414,10 +414,7 @@ export class Page {
             const leadImage = document.createElement("div");
             leadImage.classList.add("chapterlogo");
             leadImage.innerHTML = `<img src="./images/pageimages/${data.leadImage}">`;
-            
-            console.log(leadImage)
             mainContents.append(leadImage);
-
         }
 
         if (data.description.length > 0) {
