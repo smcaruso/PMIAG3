@@ -337,66 +337,109 @@ class PointClickControls {
                 break;
 
             case "2":
-            case "3":
-            case "4":
-            case "5":
-            case "6":
-            case "7":
+                title = "Caterpillar Prototype Battery Electric Mining Truck";
                 status = "Finalist";
-                title = "PMI Project of the Year Award";
                 TooltipIcon.src = "./images/glyph04w.png";
                 TooltipIcon.classList.add("project");
-                FillToolText();
+                break;
+            case "3":
+                title = "Reopening the Coquihalla after the 2021 Atmospheric River Event";
+                status = "Finalist";
+                TooltipIcon.src = "./images/glyph04w.png";
+                TooltipIcon.classList.add("project");
+                break;
+            case "4":
+                title = "Key Crossing Reliability Initiative";
+                status = "Finalist";
+                TooltipIcon.src = "./images/glyph04w.png";
+                TooltipIcon.classList.add("project");
+                break;
+            case "5":
+                title = "Space Force Rocket Launch Checklist Modernization";
+                status = "Finalist";
+                TooltipIcon.src = "./images/glyph04w.png";
+                TooltipIcon.classList.add("project");
+                break;
+            case "6":
+                title = "Commonwealth Games Telecommunications Infrastructure Project";
+                status = "Finalist";
+                TooltipIcon.src = "./images/glyph04w.png";
+                TooltipIcon.classList.add("project");
+                break;
+            case "7":
+                title = "The National Bank of Bahrain's Transformation Project - Tylos";
+                status = "Finalist";
+                TooltipIcon.src = "./images/glyph04w.png";
+                TooltipIcon.classList.add("project");
                 break;
 
             case "8":
-            case "9":
-            case "10":
                 status = "Finalist";
-                title = "PMO of the Year Award";
+                title = "University Hospitals Enterprise Program Management Office";
                 TooltipIcon.src = "./images/glyph02w.png";
                 TooltipIcon.classList.add("project");
-                FillToolText();
+                break;
+            case "9":
+                status = "Finalist";
+                title = "Mayo Clinic Enterprise Portfolio Management Office";
+                TooltipIcon.src = "./images/glyph02w.png";
+                TooltipIcon.classList.add("project");
+                break;
+            case "10":
+                status = "Finalist";
+                title = "The Saudi ZATCA Project Management Office";
+                TooltipIcon.src = "./images/glyph02w.png";
+                TooltipIcon.classList.add("project");
                 break;
 
             case "11":
-            case "12":
-            case "13":
                 status = "Recipient";
-                title = "PMI Fellow Award";
+                title = "Jean-Claude Dravet";
                 TooltipIcon.src = "./images/glyph06w.png";
                 TooltipIcon.classList.add("people");
-                FillToolText();
+                break;
+            case "12":
+                status = "Recipient";
+                title = "Steven DelGrosso";
+                TooltipIcon.src = "./images/glyph06w.png";
+                TooltipIcon.classList.add("people");
+                break;
+            case "13":
+                status = "Recipient";
+                title = "Deanna Landers, PMP";
+                TooltipIcon.src = "./images/glyph06w.png";
+                TooltipIcon.classList.add("people");
                 break;
             
             case "14":
                     title = "Meet the 2023 Evaluators";
                     TooltipIcon.classList.add("people");
-                    FillToolText();
                     break;
 
             case "15":
                 status = "Winner";
-                title = "PMI Eric Jenett Project Management Excellence Award";
+                title = "Martin Härri";
                 TooltipIcon.src = "./images/glyph04w.png";
                 TooltipIcon.classList.add("people");
-                FillToolText();
                 break;
 
             case "16":
-            case "17":
                 status = "Finalist";
-                title = "PMI Rising Leader Award";
+                title = "Maher Aljohani";
                 TooltipIcon.src = "./images/glyph03w.png";
                 TooltipIcon.classList.add("people");
-                FillToolText();
+                break;
+            case "17":
+                status = "Finalist";
+                title = "Olalla García Pérez";
+                TooltipIcon.src = "./images/glyph03w.png";
+                TooltipIcon.classList.add("people");
                 break;
             
             case "18":
                 title = "Chapter Leadership Impact Award";
                 TooltipIcon.src = "./images/glyph05w.png";
                 TooltipIcon.classList.add("academic");
-                FillToolText();
                 break;
             
             case "19":
@@ -405,25 +448,38 @@ class PointClickControls {
                 title = "Chapter Awards";
                 TooltipIcon.src = "./images/glyph05w.png";
                 TooltipIcon.classList.add("academic");
-                FillToolText();
                 break;
             
             case "22":
-                title = "Kerzner Award";
+                title = "Laura Jones";
                 TooltipIcon.src = "./images/glyph06w.png";
                 TooltipIcon.classList.add("academic");
-                FillToolText();
                 break;
 
             case "23":
-            case "24":
-            case "25":
-            case "26":
-            case "27":
-                title = "Research & Academic Awards";
+                title = "Mohd Fakhri Bin Mohd Noor";
                 TooltipIcon.src = "./images/glyph06w.png";
                 TooltipIcon.classList.add("academic");
-                FillToolText();
+                break;
+            case "24":
+                title = "Hala Sanboskani";
+                TooltipIcon.src = "./images/glyph06w.png";
+                TooltipIcon.classList.add("academic");
+                break;
+            case "25":
+                title = "Dr. Juliano Denicol";
+                TooltipIcon.src = "./images/glyph06w.png";
+                TooltipIcon.classList.add("academic");
+                break;
+            case "26":
+                title = "Juanita Woods, Ph.D., PMP, PgMP";
+                TooltipIcon.src = "./images/glyph06w.png";
+                TooltipIcon.classList.add("academic");
+                break;
+            case "27":
+                title = "Professor Jonas Söderlund";
+                TooltipIcon.src = "./images/glyph06w.png";
+                TooltipIcon.classList.add("academic");
                 break;
 
             default:
@@ -432,6 +488,8 @@ class PointClickControls {
                 break;
 
         }
+
+        FillToolText();
 
         function FillToolText() {
             TooltipTitle.innerHTML = `
