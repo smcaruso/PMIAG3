@@ -77,11 +77,11 @@ export class PMIAwardsApp {
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         this.renderer.xr.enabled = true;
         this.renderer.shadowMap.type = THREE.BasicShadowMap;
-        this.renderer.setClearColor("rgb(255, 255, 255)");
+        this.renderer.setClearColor("rgb(25, 25, 25)");
         this.renderer.outputColorSpace = THREE.SRGBColorSpace;
         this.renderer.setAnimationLoop(this.RenderLoop.bind(this));
 
-        const fog = new THREE.FogExp2(0xffffff, 1);
+        const fog = new THREE.FogExp2(0x2255AA, 1);
         this.scene.fog = fog;        
 
     }

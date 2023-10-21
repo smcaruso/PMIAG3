@@ -10,7 +10,7 @@ export class LobbyEnvironment {
 
         const GlobalLight = new THREE.AmbientLight(
             new THREE.Color("rgb(255,235,235)"),
-            0.5
+            2
         );
         
         const LobbyCubemap = app.Loaders.CubemapLoader.load([
@@ -112,7 +112,7 @@ export class LobbyEnvironment {
             });
 
             const material = new THREE.MeshStandardMaterial({
-                color: 0x4F17A8,
+                color: 0x0085FF,
                 envMap: LobbyCubemap,
                 envMapIntensity: 2,
                 metalness: 1,
@@ -162,29 +162,33 @@ export class LobbyEnvironment {
 
         this.Materials.EntryPortal = new THREE.MeshStandardMaterial({
             map: this.Textures.EntryPortalColor,
-            roughnessMap: this.Textures.EntryPortalRoughness
+            roughness: 0.5
+            // roughnessMap: this.Textures.EntryPortalRoughness
         });
 
         this.Materials.FloorCeiling = new THREE.MeshStandardMaterial({
             map: this.Textures.FloorCeilingColor,
-            roughnessMap: this.Textures.FloorCeilingRoughness,
+            roughness: 0.8
+            // roughnessMap: this.Textures.FloorCeilingRoughness,
         });
 
         this.Materials.InnerGallery = new THREE.MeshStandardMaterial({
             map: this.Textures.InnerGalleryColor,
-            roughnessMap: this.Textures.InnerGalleryRoughness,
-            emissive: 0x4F17A8,
-            emissiveIntensity: 0
+            // roughnessMap: this.Textures.InnerGalleryRoughness,
+            emissive: 0x0085FF,
+            emissiveIntensity: 0,
+            roughness: 0.7
         });
         
         this.Materials.LobbyWalls = new THREE.MeshStandardMaterial({
             map: this.Textures.LobbyWallsColor,
+            roughness: 0.5
             // roughnessMap: this.Textures.LobbyWallsRoughness,
         });
 
         this.Materials.Logo = new THREE.MeshStandardMaterial({
-            // map: this.Textures.LogoColor
-            color: 0x000000
+            map: this.Textures.LogoColor
+            // color: 0x00000
         });
         
         this.Materials.OnViewScreen = new THREE.MeshStandardMaterial({
