@@ -338,13 +338,13 @@ class PointClickControls {
 
             case "2":
                 title = "Caterpillar Prototype Battery Electric Mining Truck";
-                status = "Finalist";
+                status = "Winner";
                 TooltipIcon.src = "./images/glyph04w.png";
                 TooltipIcon.classList.add("project");
                 break;
             case "3":
                 title = "Reopening the Coquihalla after the 2021 Atmospheric River Event";
-                status = "Finalist";
+                status = "Winner";
                 TooltipIcon.src = "./images/glyph04w.png";
                 TooltipIcon.classList.add("project");
                 break;
@@ -368,7 +368,7 @@ class PointClickControls {
                 break;
             case "7":
                 title = "The National Bank of Bahrain's Transformation Project - Tylos";
-                status = "Finalist";
+                status = "Winner";
                 TooltipIcon.src = "./images/glyph04w.png";
                 TooltipIcon.classList.add("project");
                 break;
@@ -380,7 +380,7 @@ class PointClickControls {
                 TooltipIcon.classList.add("project");
                 break;
             case "9":
-                status = "Finalist";
+                status = "Winner";
                 title = "Mayo Clinic Enterprise Portfolio Management Office";
                 TooltipIcon.src = "./images/glyph02w.png";
                 TooltipIcon.classList.add("project");

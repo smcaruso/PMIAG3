@@ -62,14 +62,41 @@ export class GalleryEnvironment {
                             child.name
                             )
                         break;
+                    case "page2":
+                        newMesh = addBadge(Materials.winnerBadgePoTY, this.app);
+                        break;
+                    case "page3":
+                        newMesh = addBadge(Materials.winnerBadgeLMP, this.app);
+                        break;
+                    case "page7":
+                        newMesh = addBadge(Materials.winnerBadgeSMP, this.app);
+                        break;
+                    case "page9":
+                        newMesh = addBadge(Materials.winnerBadgePMO, this.app);
+                        break;
                     default:
                         if (child.name.includes("page") && child.name !== "page14") {
-                            let artMaterial = new THREE.MeshBasicMaterial();
                             newMesh = new ExhibitNavMesh(child.geometry, Materials[child.name], this.app, child.name);
                         } else {
                             newMesh = new WallNavMesh(child.geometry, Materials[child.name], this.app);
                         }
                         break;
+                }
+
+                function addBadge(badgeMaterial, app) {
+                    badgeMaterial.map.flipY = true;
+                    let badgeGeo = new THREE.PlaneGeometry(1.25, 0.375);
+                    let winnerBadge = new ExhibitNavMesh(
+                        badgeGeo,
+                        badgeMaterial,
+                        app,
+                        child.name
+                        );
+                    winnerBadge.position.set(0.35, -0.65, 0);
+                    winnerBadge.rotateY(Math.PI * 0.5);
+                    let galleryImage = new ExhibitNavMesh(child.geometry, Materials[child.name], app, child.name);
+                    galleryImage.add(winnerBadge);
+                    return galleryImage;
                 }
 
                 newMesh.rotation.set(child.rotation.x, child.rotation.y, child.rotation.z);
@@ -149,7 +176,11 @@ export class GalleryEnvironment {
             page24: "./images/galleryimages/24.jpg",
             page25: "./images/galleryimages/25.jpg",
             page26: "./images/galleryimages/26.jpg",
-            page27: "./images/galleryimages/27.jpg"
+            page27: "./images/galleryimages/27.jpg",
+            winnerBadgePoTY: "./textures/gallery/art/badge-poty.png",
+            winnerBadgePMO: "./textures/gallery/art/badge-pmo.png",
+            winnerBadgeLMP: "./textures/gallery/art/badge-lm.png",
+            winnerBadgeSMP: "./textures/gallery/art/badge-sm.png"
         }
 
         this.Textures = {};
