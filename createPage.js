@@ -118,10 +118,10 @@ export class Page {
             
             if (this.fullPage) {
                 top = 100;
-                if (window.innerWidth < 420) {
+                if (window.innerWidth < 440) {
                     top = 0;
                 }
-            } else if (window.innerWidth < 420) {
+            } else if (window.innerWidth < 440) {
                 top = 0;
             }
 
@@ -155,7 +155,7 @@ export class Page {
 
             let ScrollProgress = this.container.scrollTop / window.innerHeight;
 
-            if (window.innerWidth > 420) {
+            if (window.innerWidth > 440) {
                 if (ScrollProgress >= 1) {
                     this.pageBody.style.opacity = 1;
                     category.style.paddingLeft = "100px";
