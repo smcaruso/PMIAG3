@@ -91,7 +91,6 @@ export class Page {
         const category = document.createElement("div");
         category.classList.add("type", this.color);
         category.innerText = data.awardCategory;
-        category.style.paddingLeft = "100px";
 
         const title = document.createElement("div");
         title.classList.add("award");
@@ -122,6 +121,8 @@ export class Page {
                 if (window.innerWidth < 420) {
                     top = 0;
                 }
+            } else if (window.innerWidth < 420) {
+                top = 0;
             }
 
             this.container.scroll({
