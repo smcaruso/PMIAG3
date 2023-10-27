@@ -163,7 +163,6 @@ export class GalleryEnvironment {
             page11: "./images/galleryimages/11.jpg",
             page12: "./images/galleryimages/12.jpg",
             page13: "./images/galleryimages/13.jpg",
-            // page14: "./images/galleryimages/14.jpg",
             page15: "./images/galleryimages/15.jpg",
             page16: "./images/galleryimages/16.jpg",
             page17: "./images/galleryimages/17.jpg",
@@ -189,6 +188,7 @@ export class GalleryEnvironment {
         Object.keys(TexturePaths).forEach(ProcessTextures.bind(this));
 
         function ProcessTextures (ObjectKey) {
+
             this.Textures[ObjectKey] = TextureLoader.load(TexturePaths[ObjectKey]);
             this.Textures[ObjectKey].flipY = false;
             this.Textures[ObjectKey].magFilter = THREE.LinearFilter;

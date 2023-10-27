@@ -842,6 +842,332 @@ canvas.webgl {
     display: block;
 }
 
+/*
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+MOBILE RESPONSE:
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+@media screen and (max-width: 820px) {
+
+    .menu {
+        position: fixed;
+        z-index: 1;
+    }
+
+    .intro {
+        overflow-y: scroll;
+        padding-top: 2em;
+    }
+
+    .intro .welcome {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .intro .welcome .rightcol {
+        order: 1;
+    }
+
+    .intro .welcome .rightcol .loadingstuff {
+        margin-top: 2em;
+    }
+
+    .intro .welcome .leftcol {
+        order: 2;
+        margin-top: 2em;
+    }
+
+    .intro .welcome .leftcol .awardsgallerylogo {
+        display: none;
+    }
+
+    .intro .welcome .instructions {
+        width: 90%;
+        max-height: 60px;
+        font-size: smaller;
+        text-align: justify;
+        text-justify: auto;
+        padding-top: 40px;
+    }
+
+    .intro .welcome .instructions .instructionicon img {
+        width: 80px;
+        padding-right: 20px;
+    }
+
+    .intro .helpline {
+        margin-bottom: 5em;
+    }
+
+    .titlehover {
+        visibility: hidden;
+    }
+
+    .introvideocontrols {
+        height: 100px;
+        bottom: 0;
+    }
+
+    .introvideocontrols .label {
+        visibility: hidden;
+        width: 0;
+    }
+
+    .exhibit-infopanel .topspacer {   
+        display: none;
+        height: 50%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .exhibit-infopanel .titlebar {
+        z-index: 10;
+        display: initial;
+        grid-template-columns: initial;
+        height: 50vh;
+        position: relative;
+        top: 0;
+        margin-left: 0px;
+        width: 100%;
+        line-height: normal;
+        text-align: center;
+    }
+
+    .exhibit-infopanel .titlebar .type {
+        height: 100px;
+        width: 100%;
+        position: fixed;
+        display: block;
+        bottom: unset;
+        line-height: 100px;
+        padding-left: 35px;
+    }
+
+    .exhibit-infopanel .titlebar .award {
+        display: none;
+    }
+    
+    .exhibit-infopanel .titlebar .openclosebutton {
+        height: 100px;
+        width: 100px;
+        position: fixed;
+        float: right;
+        right: 0;
+        bottom: unset;
+        background-color: #ecececb4;
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+        font-size: smaller;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: small;
+        text-transform: uppercase;
+    }
+
+    .exhibit-infopanel .titlebar .openclosebutton img {
+        transform: translateY(-2px) rotate(180deg);
+    }
+
+    .exhibitpage {
+        clear: both;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        padding: 0;
+        margin-top: 100px;
+    }
+
+    .exhibitpage.project {   
+        background-color: #00000000;
+    }
+    
+    .exhibitpage.indy {  
+        background-color: #00000000;
+    }
+    
+    .exhibitpage.academic {  
+        background-color: #00000000;
+    }
+
+    .exhibitpage.indy .leftcolumn {   
+        background-color: #2a008cb4;
+    }
+    
+    .exhibitpage.project .leftcolumn {  
+        background-color: #0080A8b4;
+    }
+    
+    .exhibitpage.academic .leftcolumn {  
+        background-color: #DD310Bb4;
+    }
+
+    .exhibitpage.indy .rightcolumn {   
+        background-color: #2B008C;
+    }
+    
+    .exhibitpage.project .rightcolumn {  
+        background-color: #0080A8;
+    }
+    
+    .exhibitpage.academic .rightcolumn {  
+        background-color: #DD310B;
+    }
+
+    .exhibitpage .leftcolumn {
+        padding: 35px;
+    }
+
+    .exhibitpage .leftcolumn .leftstuff {
+        display: flex;
+        flex-direction: column;
+        clear: none;
+    }
+
+    .exhibitpage .leftcolumn .leftstuff .status {
+        order: 1;
+    }
+
+    .exhibitpage .leftcolumn .leftstuff .awardtitlesidebar {
+        order: 2;
+        max-width: 75%;
+    }
+
+    .exhibitpage .leftcolumn .leftstuff .audioguide {
+        order: 4;
+        margin-top: 50px;
+    }
+
+    .exhibitpage .leftcolumn .leftstuff .teamlist {
+        order: 6;
+        margin-top: 20px;
+        line-height: 15px;
+    }
+
+    .exhibitpage.academic .leftcolumn .leftstuff .academicaward {
+        order: 3;
+    }
+
+    .exhibitpage.academic .leftcolumn .leftstuff .aboutacademicawards {
+        order: 4;
+    }
+
+    .exhibitpage.academic .leftcolumn .leftstuff .linkslist {
+        order: 5;
+        margin-top: 0;
+    }
+
+    .exhibitpage.academic .leftcolumn .leftstuff .audioguide {
+        order: 2;
+        margin-bottom: 50px;
+    }
+    .exhibitpage.academic .leftcolumn .leftstuff .aboutthisaward {
+        order: 1;
+    }
+
+    .exhibitpage.academic .leftcolumn .leftstuff .aanextbutton {
+        order: 6;
+        margin-top: 20px;
+        height: 50px;
+        position: relative;
+    }
+
+    .exhibitpage .leftcolumn .leftstuff .teamlist ul {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .exhibitpage .leftcolumn .leftstuff .linkslist {
+        order: 5;
+        font-size: larger;
+        margin-top: 50px;
+    }
+
+    .exhibitpage .leftcolumn .leftstuff .linkslist ul {
+        width: 100%;
+    }
+
+    .exhibitpage .leftcolumn .leftstuff .linkslist li {
+        display: inline-block;
+        padding: 10px;
+        background-color: #ffffff31;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        margin-right: 5px;
+        margin-left: 0px;
+
+    }
+
+    .exhibitpage .leftcolumn .leftstuff .aboutthisaward {
+        order: 3;
+        margin-top: 20px;
+        text-align: justify;
+    }
+    
+    .exhibitpage .rightcolumn { 
+        padding: 20px;
+        padding-bottom: 120px;
+    }
+
+    .exhibitpage .rightcolumn .leadvideo { 
+        height: auto;
+    }
+
+
+    .exhibitpage .rightcolumn .title {
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        overflow-wrap: break-word;
+        margin-top: 50px;
+    }
+
+    .exhibitpage .maintext .chapterlogo {
+        width: 100%;
+    }
+
+    .exhibitpage .paitContent {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+    }
+
+}
+
+@media screen and (max-width: 440px) {
+
+    .enterbutton {
+        opacity: 0;
+        z-index: 5;
+        display: block;
+        position: absolute;
+        bottom: 12px;
+        left: 12px;
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+        background-color: #2B008Cb4;
+        color: #fff;
+        font-size: 35px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 15vh;
+        width: calc(100% - 24px);
+        height: 15vh;
+    }
+
+    .enterbutton.show {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+
+}
+
 /* FONT SETUP */
 
 @font-face {
